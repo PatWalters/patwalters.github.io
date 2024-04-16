@@ -1,10 +1,10 @@
 # main links links
 main:
   - title: "Publications"
-    url: /publications/
+    url: https://scholar.google.com/citations?hl=en&user=fBOQPb8AAAAJ&view_op=list_works&sortby=pubdate
 
-  - title: "Talks"
-    url: /talks/
+  - title: "Tutorials"
+    url: https://github.com/PatWalters/practical_cheminformatics_tutorials
 
 #  - title: "Teaching"
 #    url: /teaching/
@@ -12,8 +12,8 @@ main:
 #  - title: "Portfolio"
 #    url: /portfolio/
 
-  - title: "Blog Posts"
-    url: /year-archive/
+  - title: "Blog"
+    url: https://practicalcheminformatics.blogspot.com
 
 #  - title: "CV"
 #    url: /cv/
