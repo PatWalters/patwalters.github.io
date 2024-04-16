@@ -1,5 +1,5 @@
 # Ignore the contents of the _site directory
-_site/
+#_site/
 
 # Ignore the directory for local files during development
 local/
@@ -13,3 +13,4 @@ package-lock.json
 
 vendor/
 .bundle/
+.rubyversion
