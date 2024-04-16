@@ -15,8 +15,8 @@ main:
   - title: "Blog"
     url: https://practicalcheminformatics.blogspot.com
 
-#  - title: "CV"
-#    url: /cv/
+  - title: "Videos"
+    url: /videos/
 
 #  - title: "Guide"
 #   url: /markdown/
