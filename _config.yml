@@ -8,10 +8,10 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Pat Walters / Cheminformagicain"
+title                    : ""
 title_separator          : "-"
 name                     : &name "Pat Walters"
-description              : &description "Cheminformagician"
+description              : &description ""
 url                      : https://patwalters.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "PatWalters/academicpages.github.io"
@@ -22,9 +22,9 @@ repository               : "PatWalters/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-#  name             : "Pat Walters"
+  name             : "Pat Walters"
   pronouns         : # example: "she/her"
-  bio              : "Cheminformatics, machine learning in drug discovery"
+  bio              : "Cheminformatics, ML"
   location         : "Cambridge, MA"
   #employer         : ""
   uri              : # URL
