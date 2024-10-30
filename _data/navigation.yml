@@ -18,5 +18,9 @@ main:
   - title: "Videos"
     url: /videos/
 
+  - title: "Resources"
+    url: https://github.com/PatWalters/resources_2024
+
+
 #  - title: "Guide"
 #   url: /markdown/
