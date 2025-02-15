@@ -6,7 +6,7 @@ title: ""
 <h3>
 Applying Active Learning in Drug Discovery<br/>
 Drug Hunter Flash Talk<br/>
-February 26, 2025<br/>
+February 6, 2025<br/>
 </h3>
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=GTwevhlz_x0" target="_blank">
  <img src="http://img.youtube.com/vi/GTwevhlz_x0/hqdefault.jpg" alt="Watch the video" />
