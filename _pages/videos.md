@@ -62,10 +62,3 @@ September 10, 2021<br/>
 </a>
 
 
-<h3>
-Rock Stars of R&D Podcast<br/>
-November 14, 2020<br/>
-</h3>
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=Cy_zLRpcBPw" target="_blank">
- <img src="http://img.youtube.com/vi/Cy_zLRpcBPw/hqdefault.jpg" alt="Watch the video" />
-</a>
