@@ -10,10 +10,10 @@ main:
 #    url: /teaching/
 
 #  - title: "Portfolio"
-#    url: /portfolio/
+#    url: /year-archive/
 
   - title: "Blog"
-    url: https://practicalcheminformatics.blogspot.com
+    url: /year-archive/
 
   - title: "Videos"
     url: /videos/
