@@ -1,3 +1,9 @@
+---
+title: "Why Don't Machine Learning Models Extrapolate?"
+date: 2025-04-26
+tags:
+  - Machine Learning
+---
 **![][image1]**  
 **Introduction**   
 One thing newcomers to machine learning (ML) and many experienced practitioners often don’t realize is that ML doesn’t extrapolate. After training an ML model on compounds with µM potency, people frequently ask why none of the molecules they designed were predicted to have nM potency. If you're new to drug discovery, 1nM \= 0.001µM.  A lower potency value is usually better.  It’s important to remember that a model can only predict values within the range of the training set. If we’ve trained a model on compounds with IC50s between 5 and 100 µM, the model won’t be able to predict an IC50 of 0.1 µM. I’d like to illustrate this with a simple example. As always, all the code that accompanies this post is [available on GitHub](https://github.com/PatWalters/practical_cheminformatics_posts/tree/main/ml_doesnt_extrapolate).  
