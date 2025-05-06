@@ -1,11 +1,3 @@
----
-title: "The Trouble With Tautomers"
-date: 2025-05-06
-tags:
-  - Machine Learning
-  - Cheminformatics
-  - Tautomers
----
 **![][image1]**  
 **Introduction**  
 One factor often overlooked when applying machine learning (ML) in small-molecule drug discovery is the influence of tautomers on model predictions.  Drug-like molecules, especially those containing heterocycles and conjugated pi systems, can exist in several different tautomeric forms.  These forms feature varying bond orders between the atoms. Consequently, the molecular representation used in an ML model varies.  This remains true regardless of whether we’re using molecular fingerprints, topological descriptors, or message passing neural networks (MPNN).  
@@ -117,7 +109,7 @@ My recommendation is to train models and perform inference using the input repre
 2\. The representations of molecules in databases and compound catalogs are typically drawn by chemists who know what they are doing.  We often obtain reasonable tautomers based on the intuition of the individual who drew the molecule.   
 3\.  As we observed above, the variation in model predictions due to tautomers is usually quite small. 
 
-So, it turns out that tautomers tend to have minimal impact on ML predictions.  While there are a few cases where large differences occur, these seem to be exceptions rather than the rule.  Perhaps I should have titled this post “How I Learned to Stop Worrying and Love Tautomers”.  The code I used for this analysis is available on GitHub; please check it out if you’re interested. As always, I’d love to hear what others think.  How do you deal with tautomers?  Please leave a comment.  
+So, it turns out that tautomers tend to have minimal impact on ML predictions.  While there are a few cases where large differences occur, these seem to be exceptions rather than the rule.  Perhaps I should have titled this post “How I Learned to Stop Worrying and Love Tautomers”.  The code I used for this analysis is [available on GitHub](https://github.com/PatWalters/practical_cheminformatics_posts/blob/main/tautomers/tautomer_ML.ipynb); please check it out if you’re interested. As always, I’d love to hear what others think.  How do you deal with tautomers?  Please leave a comment.  
 
 **Acknowledgement**  
 I’d like to thank Greg Landrum for valuable discussions and comments on earlier versions of the post. 
