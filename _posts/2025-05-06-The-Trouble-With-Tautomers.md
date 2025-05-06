@@ -109,6 +109,8 @@ My recommendation is to train models and perform inference using the input repre
 2\. The representations of molecules in databases and compound catalogs are typically drawn by chemists who know what they are doing.  We often obtain reasonable tautomers based on the intuition of the individual who drew the molecule.   
 3\.  As we observed above, the variation in model predictions due to tautomers is usually quite small. 
 
+However, as Srijit Seal pointed out in [a LinkedIn comment on this post](https://www.linkedin.com/posts/wpwalters_the-latest-practical-cheminformatics-post-activity-7325506920545402880-ldNn?utm_source=share&utm_medium=member_desktop&rcm=ACoAAACOM1kBbwzd-tPkToMKEeXdErvuvTbVJjc), it is important to generate a canonical tautomeric representation to ensure that a dataset does not contain duplicate structures. I typically achieve this by generating an InChI key and verifying that the number of unique InChI keys matches the number of rows in the table. That said, I still would not use a canonical tautomer representation to build an ML model. 
+
 So, it turns out that tautomers tend to have minimal impact on ML predictions.  While there are a few cases where large differences occur, these seem to be exceptions rather than the rule.  Perhaps I should have titled this post “How I Learned to Stop Worrying and Love Tautomers”.  The code I used for this analysis is [available on GitHub](https://github.com/PatWalters/practical_cheminformatics_posts/blob/main/tautomers/tautomer_ML.ipynb); please check it out if you’re interested. As always, I’d love to hear what others think.  How do you deal with tautomers?  Please leave a comment.  
 
 **Acknowledgement**  
