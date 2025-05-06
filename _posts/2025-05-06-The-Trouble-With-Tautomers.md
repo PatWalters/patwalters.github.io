@@ -1,3 +1,11 @@
+---
+title: "The Trouble With Tautomers"
+date: 2025-05-06
+tags:
+  - Machine Learning
+  - Cheminformatics
+  - Tautomers
+---
 **![][image1]**  
 **Introduction**  
 One factor often overlooked when applying machine learning (ML) in small-molecule drug discovery is the influence of tautomers on model predictions.  Drug-like molecules, especially those containing heterocycles and conjugated pi systems, can exist in several different tautomeric forms.  These forms feature varying bond orders between the atoms. Consequently, the molecular representation used in an ML model varies.  This remains true regardless of whether we’re using molecular fingerprints, topological descriptors, or message passing neural networks (MPNN).  
