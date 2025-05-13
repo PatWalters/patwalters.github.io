@@ -1,5 +1,5 @@
 ---
-title: "Useful RDKit Utils - A Motley Collection of Helpful Routines"
+title: "Useful RDKit Utils - A Mötley Collection of Helpful Routines"
 date: 2025-05-12
 tags:
   - Cheminformatics
