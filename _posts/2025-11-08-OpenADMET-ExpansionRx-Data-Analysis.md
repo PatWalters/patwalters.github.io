@@ -47,7 +47,9 @@ marimo edit openadmet_expansion_exploration.py --sandbox
 
 4\. Enjoy\! 
 
-You can also try out the notebook on **molab**, marimo's answer to Google Colab.  To run the notebook on **molab** click [here](https://molab.marimo.io/notebooks/nb_owQ4ngjzw1NjtnnYVkccfv)
+You can also try out the notebook on **molab**, marimo's answer to Google Colab.
+1. Go to [https://molab.marimo.io](https://molab.marimo.io) and sign up for a free account.
+2. To run the notebook on **molab** click [here](https://molab.marimo.io/notebooks/nb_EcrV8CKFCdMtTck4VsgYz8)
 
 ### Where's the Code?      
 The code and notebook for this post can be found in this GitHub repo [https://github.com/PatWalters/practical\_cheminformatics\_posts/tree/main/expansion\_data\_exploration](https://github.com/PatWalters/practical_cheminformatics_posts/tree/main/expansion_data_exploration)
