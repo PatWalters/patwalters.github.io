@@ -16,7 +16,7 @@ There are a few aspects of marimo that might confuse some long-time Jupyter user
 1. The output of a code cell in marimo appears above the cell in the notebook instead of below it, as in Jupyter.   
 2. A marimo notebook is reactive, meaning that when you change the value of a variable, any code cells that depend on that variable will automatically update. This differs from Jupyter, where you need to manually re-run code cells to see the updated output. It also means that a variable can only be defined once in a marimo notebook.   
 3. When you run a marimo notebook, it first checks if you have the necessary libraries installed. If not, marimo will ask if you'd like to install them and will install them for you. This makes it easy to share marimo notebooks with others without worrying about dependencies. This notebook has the dependencies inlined; if you run it using the `--sandbox` flag, marimo will create a sandboxed environment and automatically install the dependencies.   
-4. When you open an existing marimo notebook, it runs the code in all the cells, which can take some time to start. Wait for the spinning hourglass in the upper left corner to disappear. 
+4. Once the notebook loads you can run the cells by clicking on the run button associated with each shell or hitting shift-return (just like Jupyter).  You can also click on the yellow **run** button in the bottom right to run the whole notebook. 
 
 Using the marimo notebook is easy, just follow these simple steps.
 
@@ -47,7 +47,7 @@ marimo edit openadmet_expansion_exploration.py --sandbox
 
 4\. Enjoy\! 
 
-If you're not feeling very adventurous, you can view an HTML version of the notebook here.
+You can also try out the notebook on **molab**, marimo's answer to Google Colab.  To run the notebook on **molab** click [here](https://molab.marimo.io/notebooks/nb_owQ4ngjzw1NjtnnYVkccfv)
 
 ### Where's the Code?      
 The code and notebook for this post can be found in this GitHub repo [https://github.com/PatWalters/practical\_cheminformatics\_posts/tree/main/expansion\_data\_exploration](https://github.com/PatWalters/practical_cheminformatics_posts/tree/main/expansion_data_exploration)
