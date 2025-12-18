@@ -4,6 +4,15 @@ title: ""
 ---
 ## Talks
 <h3>
+Benchmarking Machine Learning Models in Drug Discovery-You’re Probably Doing It Wrong<br/>
+NCATS In Silico Drug Discovery Workshop<br/>
+October 24, 2024<br/>
+</h3>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=8TrRkGIWxfs" target="_blank">
+ <img src="https://img.youtube.com/vi/8TrRkGIWxfs/maxresdefault.jpg" alt="Watch the video" />
+</a>
+
+<h3>
 Applying Active Learning in Drug Discovery<br/>
 Drug Hunter Flash Talk<br/>
 February 6, 2025<br/>
