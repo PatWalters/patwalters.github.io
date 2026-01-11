@@ -44,7 +44,7 @@ In all three cases above, Gemini returned the correct result after an additional
 
 **Does Gemini Return the Correct Answer?**
 
-Gemini can construct and run the query, but does it return the correct results? To test, I built my own workflow and ran it as a comparison. I’m starting to feel like a contestant on the old game show “Are You Smarter Than a 5th Grader,” except in this case it’s “Am I Smarter Than an LLM” (probably not). My approach to this was pretty simple. 
+Gemini can construct and run the query, but does it return the correct results? To test, I built my own workflow and ran it as a comparison. I’m starting to feel like a contestant on the old game show “Are You Smarter Than a 5th Grader?,” except in this case it’s “Am I Smarter Than an LLM?” (probably not). My approach to this was pretty simple. 
 
 1\. Use the [bioservices](https://github.com/cokelaer/bioservices) API to query the UniProt database for UniProt IDs corresponding to all human protein kinases.   
 2\. Convert the UniProt IDs to ChEMBL IDs  
