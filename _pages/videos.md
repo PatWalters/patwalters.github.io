@@ -4,6 +4,17 @@ title: ""
 ---
 ## Talks
 <h3>
+Building Machine Learning Models Using Data from BindingDB<br/>
+Tutorial<br/>
+February 26, 2026<br/>
+</h3>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=R97Qikb7_38" target="_blank">
+ <img src="https://img.youtube.com/vi/R97Qikb7_38/maxresdefault.jpg" alt="Watch the video" />
+</a>
+
+
+
+<h3>
 Benchmarking Machine Learning Models in Drug Discovery-You’re Probably Doing It Wrong<br/>
 NCATS In Silico Drug Discovery Workshop<br/>
 October 24, 2024<br/>
