@@ -143,6 +143,7 @@ analytics:
     tracking_id: "G-QWN228E66P"
     anonymize_ip: false # default
 
+google_analytics: "G-QWN228E66P"
 
 # Reading Files
 include:
