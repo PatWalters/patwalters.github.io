@@ -4,6 +4,17 @@ title: ""
 ---
 ## Talks
 <h3>
+The Data Problem Killing Drug Discovery<br/>
+Talk at the Astera Institute<br/>
+May 20, 2026<br/>
+</h3>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=7NXBQE6T2UI" target="_blank">
+ <img src="https://img.youtube.com/vi/7NXBQE6T2UI/maxresdefault.jpg" alt="Watch the video" />
+</a>
+
+
+
+<h3>
 Building Machine Learning Models Using Data from BindingDB<br/>
 Tutorial<br/>
 February 26, 2026<br/>
