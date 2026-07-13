@@ -70,6 +70,9 @@
     padding: 2px 9px;
   }
 
+  p.source { margin: 8px 2px 0; color: var(--muted); font-size: 13px; }
+  p.source a { color: var(--accent); }
+
   footer { margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; }
   footer a { color: var(--accent); }
 </style>
@@ -100,6 +103,20 @@
            potency distribution of their analogs.</p>
         <div class="tags"><span>SAR</span><span>PXR</span><span>pEC50</span></div>
       </a>
+    </li>
+    <li>
+      <a class="card" href="gtm_logs.html">
+        <h2>GTM Solubility Viewer</h2>
+        <p>Generative topographic map of 7,298 molecules colored by LogS, the negative log of aqueous
+           solubility in &micro;M. Drag the cutoff sliders to change where the red/yellow/green split
+           falls and watch the pies, histogram, and cards recolor. Tap a node to load its molecules
+           into the structure grid.</p>
+        <div class="tags"><span>GTM</span><span>Solubility</span><span>ADME</span></div>
+      </a>
+      <p class="source">Data from Fang, Cheng, et&nbsp;al. &ldquo;Prospective validation of machine learning algorithms
+         for absorption, distribution, metabolism, and excretion prediction: An industrial perspective.&rdquo;
+         <em>J. Chem. Inf. Model.</em> <strong>63</strong>, 3263&ndash;3274 (2023).
+         <a href="https://doi.org/10.1021/acs.jcim.3c00160">doi:10.1021/acs.jcim.3c00160</a></p>
     </li>
   </ul>
 
