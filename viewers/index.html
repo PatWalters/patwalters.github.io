@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interactive Viewers &ndash; Practical Cheminformatics</title>
+<meta name="description" content="Interactive, self-contained molecular viewers built as vibe-coding experiments.">
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #24292f;
+    --muted: #57606a;
+    --border: #d8dee4;
+    --card-bg: #ffffff;
+    --card-hover: #f6f8fa;
+    --accent: #0969da;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1117;
+      --fg: #e6edf3;
+      --muted: #9198a1;
+      --border: #30363d;
+      --card-bg: #161b22;
+      --card-hover: #1c2430;
+      --accent: #6cb6ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 48px 20px 64px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 28px; }
+  h1 { margin: 0 0 8px; font-size: 28px; letter-spacing: -0.01em; }
+  header p { margin: 0; color: var(--muted); }
+  header a { color: var(--accent); }
+
+  ul.cards { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+  a.card {
+    display: block;
+    padding: 18px 20px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--card-bg);
+    text-decoration: none;
+    color: inherit;
+    transition: background .12s ease, border-color .12s ease, transform .12s ease;
+  }
+  a.card:hover, a.card:focus-visible {
+    background: var(--card-hover);
+    border-color: var(--accent);
+    transform: translateY(-1px);
+  }
+  a.card h2 { margin: 0 0 6px; font-size: 18px; color: var(--accent); }
+  a.card p { margin: 0; color: var(--muted); font-size: 14.5px; }
+  a.card .tags { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+  a.card .tags span {
+    font-size: 11.5px;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 2px 9px;
+  }
+
+  footer { margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Interactive Viewers</h1>
+    <p>Browser-based molecular viewers, put together as vibe-coding experiments.
+       Each page is self-contained &ndash; nothing is uploaded, everything runs locally in your browser.</p>
+  </header>
+
+  <ul class="cards">
+    <li>
+      <a class="card" href="pxr.html">
+        <h2>Protein&ndash;Ligand Series Viewer</h2>
+        <p>3D binding-site view of a PXR ligand series. Toggle ligands to overlay their poses,
+           see predicted hydrogen bonds to the protein, and browse 2D structures aligned on the
+           maximum common substructure. Search by name or SMARTS.</p>
+        <div class="tags"><span>3D</span><span>PXR</span><span>MCS alignment</span></div>
+      </a>
+    </li>
+    <li>
+      <a class="card" href="pxr_sar.html">
+        <h2>PXR Parent Hits &amp; Analogs</h2>
+        <p>SAR browser for PXR. Click a parent hit to see its analogs sorted by pEC50, each aligned
+           to the parent with the shared substructure highlighted. Parent cards summarize the
+           potency distribution of their analogs.</p>
+        <div class="tags"><span>SAR</span><span>PXR</span><span>pEC50</span></div>
+      </a>
+    </li>
+  </ul>
+
+  <footer>
+    These pages are large (10&ndash;15&nbsp;MB) because all structure data is embedded &ndash; give them a
+    moment to load. Source: <a href="https://github.com/PatWalters/patwalters.github.io">github.com/PatWalters/patwalters.github.io</a>
+  </footer>
+</div>
+</body>
+</html>
