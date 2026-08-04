@@ -14,3 +14,11 @@ package-lock.json
 vendor/
 .bundle/
 .rubyversion
+
+# Ignore macOS Finder metadata
+.DS_Store
+
+# Ignore emacs backup and auto-save files
+\#*\#
+*~
+.\#*
