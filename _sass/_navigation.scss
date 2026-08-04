@@ -306,6 +306,87 @@
       }
     }
   }
+
+  /* Multi-level (dropdown) menus -- driven by `children:` in _data/navigation.yml */
+
+  .nav-dropdown-caret {
+    display: inline-block;
+    margin-left: 0.35em;
+    vertical-align: middle;
+    border-top: 0.32em solid;
+    border-right: 0.32em solid transparent;
+    border-left: 0.32em solid transparent;
+  }
+
+  .nav-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 30;
+    min-width: 100%;
+    margin: 0;
+    padding: 5px 0;
+    list-style: none;
+    text-align: left;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(#000, 0.25);
+  }
+
+  .visible-links .nav-dropdown li,
+  .hidden-links .nav-dropdown li {
+    display: block;
+    font-weight: normal;
+    border-bottom: 0;
+  }
+
+  .visible-links .nav-dropdown a,
+  .hidden-links .nav-dropdown a {
+    margin: 0;
+    padding: 10px 20px;
+    font-size: $type-size-5;
+
+    /* no sliding underline on the child links */
+    &:before {
+      content: none;
+    }
+
+    &:hover {
+      color: $masthead-link-color-hover;
+      background: mix(#fff, $primary-color, 75%);
+    }
+  }
+
+  /* open on hover, on keyboard focus, and on tap (class set in masthead.html) */
+  .masthead__menu-item--has-children:hover > .nav-dropdown,
+  .masthead__menu-item--has-children:focus-within > .nav-dropdown,
+  .masthead__menu-item--has-children.nav-dropdown-open > .nav-dropdown {
+    display: block;
+  }
+
+  /* inside the overflow menu there is no room to fly out, so show the
+     children as an indented list instead */
+  .hidden-links {
+
+    .nav-dropdown {
+      display: block;
+      position: static;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+
+      a {
+        padding-left: 35px;
+      }
+    }
+
+    .nav-dropdown-caret {
+      display: none;
+    }
+  }
 }
 
 

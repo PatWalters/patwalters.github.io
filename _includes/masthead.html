@@ -8,12 +8,28 @@
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/">{{ site.title }}</a></li>
           {% for link in site.data.navigation.main %}
-            {% if link.url contains 'http' %}
-              {% assign domain = '' %}
-              {% else %}
-              {% assign domain = base_path %}
+            {% if link.children %}
+              <li class="masthead__menu-item masthead__menu-item--has-children">
+                <a href="#" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">{{ link.title }}<span class="nav-dropdown-caret" aria-hidden="true"></span></a>
+                <ul class="nav-dropdown">
+                  {% for child in link.children %}
+                    {% if child.url contains 'http' %}
+                      {% assign child_domain = '' %}
+                    {% else %}
+                      {% assign child_domain = base_path %}
+                    {% endif %}
+                    <li><a href="{{ child_domain }}{{ child.url }}">{{ child.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% else %}
+              {% if link.url contains 'http' %}
+                {% assign domain = '' %}
+                {% else %}
+                {% assign domain = base_path %}
+              {% endif %}
+              <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
             {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
           {% endfor %}
         </ul>
         <ul class="hidden-links hidden"></ul>
@@ -21,3 +37,39 @@
     </div>
   </div>
 </div>
+
+<script>
+  /* Top-level dropdown menus: click/tap to open, Escape or outside click to close.
+     Hover and focus are handled in CSS; this adds touch support. */
+  (function () {
+    var nav = document.getElementById("site-nav");
+    if (!nav) return;
+
+    function closeAll(except) {
+      var open = nav.querySelectorAll(".masthead__menu-item--has-children.nav-dropdown-open");
+      for (var i = 0; i < open.length; i++) {
+        if (open[i] === except) continue;
+        open[i].classList.remove("nav-dropdown-open");
+        open[i].querySelector(".nav-dropdown-toggle").setAttribute("aria-expanded", "false");
+      }
+    }
+
+    nav.addEventListener("click", function (event) {
+      var toggle = event.target.closest(".nav-dropdown-toggle");
+      if (!toggle) return;
+      event.preventDefault();
+      var item = toggle.parentNode;
+      var isOpen = item.classList.toggle("nav-dropdown-open");
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      closeAll(item);
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!nav.contains(event.target)) closeAll();
+    });
+
+    document.addEventListener("keyup", function (event) {
+      if (event.key === "Escape") closeAll();
+    });
+  })();
+</script>

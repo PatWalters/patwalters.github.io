@@ -55,4 +55,9 @@
     padding-right: 2em;
     font-weight: 700;
   }
+
+  /* dropdown menus are styled in _navigation.scss, alongside .greedy-nav */
+  &--has-children {
+    position: relative;
+  }
 }

@@ -18,11 +18,15 @@ main:
   - title: "Videos"
     url: /videos/
 
-  - title: "Resources"
-    url: https://github.com/PatWalters/resources_2025
+  - title: "Visualization Experiments"
+    url: /viewers/
 
-  - title: "Pantry of Peculiarities"
-    url: https://github.com/PatWalters/pantry_of_peculiarities/blob/main/README.md
+  - title: "Resources"
+    children:
+      - title: "ML in Drug Discovery Resources"
+        url: https://github.com/PatWalters/resources_2025
+      - title: "Pantry of Peculiarities"
+        url: https://github.com/PatWalters/pantry_of_peculiarities/blob/main/README.md
 
 
 #  - title: "Guide"
