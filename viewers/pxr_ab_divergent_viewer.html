@@ -63,8 +63,8 @@
             <option value="molecular-surface">surface</option>
           </select></label></div>
       <div class="grp"><b>pocket</b>
-        <label><input type="checkbox" id="pockA"> A</label>
-        <label><input type="checkbox" id="pockB"> B</label></div>
+        <label><input type="checkbox" id="pockA" checked> A</label>
+        <label><input type="checkbox" id="pockB" checked> B</label></div>
       <div class="grp"><b></b>
         <button id="allbtn">show all</button>
         <button id="nonebtn">hide all</button>
@@ -82,7 +82,7 @@
   var LIGA = 0x1f6fd6, LIGB = 0xd63a2f, PROTA = 0x7fa8dd, PROTB = 0xe59b95,
       POCKA = 0x5b83c0, POCKB = 0xc06a63;
   var loaded = {};
-  var show = { ligA:true, ligB:true, protA:false, protB:false, pockA:false, pockB:false };
+  var show = { ligA:true, ligB:true, protA:false, protB:false, pockA:true, pockB:true };
   var protStyle = "cartoon";
   var byId = {};
   DATA.structures.forEach(function (s) { s.selA = false; s.selB = false; byId[s.id] = s; });
