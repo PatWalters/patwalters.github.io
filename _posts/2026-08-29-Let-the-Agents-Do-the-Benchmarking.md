@@ -29,7 +29,7 @@ Rather than relying on my laptop, I had Claude offload the benchmarking workload
 We evaluated every method using the 5x5 cross-validation protocol outlined in our publication. Each dataset has a fixed held-out test set, and the 25 replicate models come from five repeats of five-fold cross-validation over the training molecules, grouped by cluster, so every method sees identical training molecules in every fold and is scored on the same untouched test set. The splits were set up as follows:
 
 * **ExpansionRx Dataset:** Used the train/test split that ships with the challenge data, 5,326 training and 2,282 test molecules, a 70/30 division.  
-* **Biogen Dataset:** No split ships with this data, so whole BitBIRCH clusters were held out until the test set reached the same 30%.  
+* **Biogen Dataset:** No split ships with this data, so whole [BitBIRCH](https://pubs.rsc.org/dd/article/4/4/1042/888988/BitBIRCH-efficient-clustering-of-large-molecular) clusters were held out until the test set reached the same 30%.  
 * **Foundation Models:** CheMeleon and MEGA-CL were fine-tuned on the training folds. Monroe and Mol-JEPA keep their encoders frozen and predict in context, with no downstream training at all.
 
 Alright, what we’ve done so far is good, but not especially exciting. Over the last few weeks, we’ve seen three new foundation models for chemistry emerge.  
