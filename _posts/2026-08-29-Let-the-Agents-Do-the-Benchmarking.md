@@ -1,13 +1,13 @@
 ---
 title: "Let the Agents Do the Benchmarking"
 date: 2026-08-29
-excerpt: "How I benchmarked three new chemistry foundation models on two ADMET datasets without cloning a single Git repository."
 tags:
   - ADMET
   - Machine Learning
   - LLM
 ---
 ![Three robot detectives in trench coats walking down a rainy noir alley]({{ site.baseurl }}/assets/images/2026_08_AGENTS/header.jpeg)
+How I benchmarked three new chemistry foundation models on two ADMET datasets without cloning a single Git repository.
 
 ### **A Whole New World**
 
