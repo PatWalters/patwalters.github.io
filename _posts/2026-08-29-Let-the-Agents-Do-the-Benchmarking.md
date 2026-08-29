@@ -1,6 +1,7 @@
 ---
 title: "Let the Agents Do the Benchmarking"
 date: 2026-08-29
+excerpt: "How I benchmarked three new chemistry foundation models on two ADMET datasets without cloning a single Git repository."
 tags:
   - ADMET
   - Machine Learning
