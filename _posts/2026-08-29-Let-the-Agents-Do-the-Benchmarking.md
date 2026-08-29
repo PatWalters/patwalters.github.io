@@ -1,0 +1,73 @@
+---
+title: "Let the Agents Do the Benchmarking"
+date: 2026-08-29
+tags:
+  - ADMET
+  - Machine Learning
+  - LLM
+---
+![Three robot detectives in trench coats walking down a rainy noir alley]({{ site.baseurl }}/assets/images/2026_08_AGENTS/header.jpeg)
+
+### **A Whole New World**
+
+Few things in computational work are as satisfying as reading a compelling paper, grabbing the code off GitHub, and testing it on a trusted dataset. Yet all too often, that initial enthusiasm gets derailed by practical headaches. Hours disappear into debugging version conflicts across CUDA, PyTorch, PyTorch Lightning, and an endless web of dependencies. Even when the code runs, the paper's value is often undermined by reliance on flawed datasets such as TDC or MoleculeNet, as well as a lack of rigorous statistical comparisons.
+
+Thankfully, those frustrating days are firmly in the past, and hopefully, they are for you as well. Leveraging my friend Claude and his network of agents, I have recently been running benchmarks without manually cloning a single Git repository. The seamless nature and overall effectiveness of this approach have truly impressed me. 
+
+To kick off the benchmarking process, I start by specifying my target datasets. Given my focus on ADMET modeling, I selected the dataset from the recent [OpenADMET ExpansionRx Blind Challenge](https://huggingface.co/spaces/openadmet/OpenADMET-ExpansionRx-Challenge), along with the Biogen datasets provided by [Cheng Fang and colleagues in their 2023 paper](https://pubs.acs.org/jcisd8/article-abstract/63/11/3263/850292/Prospective-Validation-of-Machine-Learning?redirectedFrom=fulltext). Several key factors make these datasets an outstanding selection for evaluation.
+
+* Rather than being pieced together from dozens of disparate publications like a Franken-dataset, these data were produced uniformly by a single team of scientists in one lab. I mean no disrespect to the pioneers who curated earlier literature sets or collected those original measurements; their contributions were crucial for getting the field off the ground. But we are capable of far higher standards now. Given that it's 2026, relying on outdated and flawed benchmark data is completely unjustifiable. Wanting to stay aligned with older papers isn't a valid excuse either; as my mother used to ask, "If your friends jumped off a bridge, would you jump too?"  
+* These compounds span a chemical space that faithfully reflects standard drug discovery settings. Incorporating both the ExpansionRx and Biogen benchmark sets lets us assess two distinct, real-world scenarios: the ExpansionRx dataset stems from active discovery programs and is highly congeneric, offering an accurate model for hit-to-lead and lead optimization, while the Biogen set consists mostly of commercial screening molecules, capturing the character of early-stage discovery.  
+* These datasets feature a realistic dynamic range. One of my long-standing pet peeves with literature benchmarks is their wildly artificial ranges, and I find it baffling that papers predicting aqueous solubility across more than 12 orders of magnitude are still being published (seriously, who is reviewing these?). Claiming strong performance on such exaggerated data is worse than [fishing in the bathtub](https://patwalters.github.io/Please-Stop-Fishing/). 
+
+### **Let’s Get This Party Started**
+
+To ensure our benchmarking process adhered to rigorous statistical practices, I directed Claude to our 2025 paper, “[Practically significant method comparison protocols for machine learning in small molecule drug discovery](https://pubs.acs.org/jcisd8/article-abstract/65/18/9398/3687588/Practically-Significant-Method-Comparison?redirectedFrom=fulltext),” and several related blog posts once our baseline datasets were selected. I asked Claude to establish an initial suite of four candidate models: a Morgan fingerprint baseline using LightGBM, ChemProp single-task, ChemProp multi-task, and ChemProp integrated with the CheMeleon foundation model. Claude located the necessary code repositories and literature to begin. Although it initially retrieved the CheMeleon preprint, it quickly updated to the [recently published JCIM paper.](https://pubs.acs.org/jcisd8/article-abstract/doi/10.1021/acs.jcim.6c01546/5250516/Deep-Learning-Foundation-Models-for-Low-Data?redirectedFrom=fulltext) 
+
+Rather than relying on my laptop, I had Claude offload the benchmarking workloads to a Linux server in my basement to speed up processing. To handle session orchestration and prevent any disruption when closing my laptop, I rely on [herdr](https://herdr.dev/), a modern, tmux-inspired tool built specifically for agent-driven workflows. If you have not tried herdr yet, I highly recommend checking it out (my friends are already fed up with me constantly praising it\!).
+
+We evaluated every method using the 5x5 cross-validation protocol outlined in our publication. Each dataset has a fixed held-out test set, and the 25 replicate models come from five repeats of five-fold cross-validation over the training molecules, grouped by cluster, so every method sees identical training molecules in every fold and is scored on the same untouched test set. The splits were set up as follows:
+
+* **ExpansionRx Dataset:** Used the train/test split that ships with the challenge data, 5,326 training and 2,282 test molecules, a 70/30 division.  
+* **Biogen Dataset:** No split ships with this data, so whole BitBIRCH clusters were held out until the test set reached the same 30%.  
+* **Foundation Models:** CheMeleon and MEGA-CL were fine-tuned on the training folds. Monroe and Mol-JEPA keep their encoders frozen and predict in context, with no downstream training at all.
+
+Alright, what we’ve done so far is good, but not especially exciting. Over the last few weeks, we’ve seen three new foundation models for chemistry emerge.  
+
+* MEGA-CL ([arXiv:2607.24314](https://arxiv.org/abs/2607.24314)) uses a graph contrastive learning approach. It pairs an enhanced GCN+ message-passing backbone, which adds residual connections and layer normalization, with a multi-head graph external attention module. The model was pre-trained on about 100 million molecules using an NT-Xent contrastive objective, then fine-tuned for individual endpoints using the authors' checkpoint. Because the architecture is designed for single-target tasks, a separate model is needed for each endpoint.  
+* Monroe ([arXiv:2608.18982](https://arxiv.org/abs/2608.18982)) is a 58.5M-parameter graph transformer built on the GRIT architecture. It was extensively pre-trained on 1,152 simultaneous tasks, including predicting 62 quantum-chemical properties for 81 million molecules and 1,089 bioassays, as well as a conformer denoising objective. Its graph representation is distinctive because it adds extra edges to encode stereochemical configurations, enabling the model to distinguish between stereoisomers. For downstream tasks, the encoder stays frozen: each molecule is mapped to a 720-dimensional vector, and [TabPFN](https://github.com/PriorLabs/tabpfn) makes in-context predictions directly from these representations in a single forward pass.  
+* Mol-JEPA ([arXiv:2608.22642](https://arxiv.org/html/2608.22642v2)) is a roughly 50M-parameter architecture from Boehringer Ingelheim, the University of Tübingen, Brown University, and UT Austin. It moves away from the common self-supervised approach of perturbing structures, which the authors argue is ill-suited to chemistry. Instead, it uses a joint-embedding predictive architecture that masks entire modalities across fourteen types of molecular data, including graphs, ECFP/MOE descriptors, xTB/DFT calculations, and various experimental labels. A transformer is trained to predict these missing latent representations from the remaining ones using 4.69 million molecules. For inference, the model only requires SMILES strings; the frozen 512-dimensional CLS token is then used by [TabICL](https://github.com/soda-inria/tabicl) for downstream tasks.
+
+Monroe and Mol-JEPA fall into the same methodological category, distinguishing them from MEGA-CL. While the former pair keeps their encoders frozen and relies on an in-context tabular model for adaptation, MEGA-CL performs full fine-tuning of the entire network tailored to each specific endpoint.
+
+In all three cases, I simply provided a PDF of the preprint, asked Claude to download and test the code, and then run the same benchmarks it did for the previous methods. I was amazed at how easy this was. In the past, it would have taken me a couple of days to benchmark a single method. I would usually spend a few hours just getting the code to work, then more time figuring out the inputs, running the code, and writing the analysis scripts. In this case, I gave a few prompts, went to bed, and woke up to a beautiful report. To be honest, there was one glitch, but it wasn’t Claude’s fault. After downloading the MEGA-CL GitHub repository, Claude pointed out that the model weights were missing. I looked through the repo and the Zenodo archive, and sure enough, they were indeed missing. I emailed the MEGA-CL authors, and they quickly added the model weights to the repo. Thank you, Jinfeng Liu\!   
+
+### **The Proof is in the ~~Pudding~~ Report**
+
+I asked Claude to write up the results as an artifact. I have to admit that Claude’s report is much better than anything I would have come up with on my own. It includes the Tukey honestly significant difference (HSD) plots I’m fond of, and Claude also came up with a better version of the “dreaded bold table” that actually shows which results are statistically equivalent. Even better, all the analysis code and data are kept up to date in their own GitHub repository, and I can share the report with a URL.   
+[https://claude.ai/code/artifact/fa406d3a-3b09-4e17-9e1c-ecd2d92903d2](https://claude.ai/code/artifact/fa406d3a-3b09-4e17-9e1c-ecd2d92903d2)
+
+At this point, I’m sure you’re eager to know which foundation model performed best, and across both datasets there’s a clear winner. The report is extensive, and I’d urge you to check it out. In the interest of brevity, I’ll just share a few key plots. First, we’ll look at the mean absolute error (MAE) for the 9 endpoints in the ExpansionRx dataset. Since we’re looking at MAE, lower values are better. For those less familiar with these plots, the best method is shown in blue; other statistically equivalent methods are shown in grey. If a method is significantly worse than the best one, its point is colored red. When we evaluate performance on the ExpansionRx dataset, we see two clear winners emerge. Monroe \+ TabPFN takes LogD, both microsomal stability endpoints, and both Caco-2 endpoints, while ChemProp \+ CheMeleon takes all three protein and tissue binding endpoints plus aqueous solubility (LogS). The split follows the assay rather than the amount of data. LogS has more training data than any other endpoint, 5,128 records, and ChemProp \+ CheMeleon still wins it, with Monroe \+ TabPFN a close second. It’s also worth noting who isn’t on this list: MEGA-CL and Mol-JEPA are best on nothing, and tied with the best on nothing, across all nine endpoints. 
+
+![Tukey HSD on MAE for the nine ExpansionRx endpoints across the seven methods]({{ site.baseurl }}/assets/images/2026_08_AGENTS/tukey_mae_expansion.png)
+
+For the Biogen dataset, the top performer was even clearer. In every case, Monroe \+ TabPFN outperformed the other models. The assay split from ExpansionRx does not replicate here. The two plasma protein binding endpoints are exactly where ChemProp \+ CheMeleon should have been strong, and they are where it loses by the widest margin on the page.
+
+![Tukey HSD on MAE for the six Biogen endpoints across the seven methods]({{ site.baseurl }}/assets/images/2026_08_AGENTS/tukey_mae_biogen.png)
+
+I was also quite happy with Claude’s alternative to the dreaded bold table. Rather than simply bolding the “best” method, statistically equivalent methods are labeled as “tied”. 
+
+![Mean absolute error for the nine ExpansionRx endpoints, with best and tied methods labelled]({{ site.baseurl }}/assets/images/2026_08_AGENTS/mae_table_expansion.png)
+
+One caveat is worth flagging, and it was Claude that raised it in the report rather than me. Monroe’s authors have themselves run their model on the ExpansionRx data, and their pre-training corpus was not screened against this test set. The folds, the transform, and the test set here are ours, and no Monroe hyperparameter was tuned on them, but the model was published with these molecules in view in a way ChemProp and LightGBM were not. Mol-JEPA’s authors released their entire pre-training table, so the same check could actually be run there: none of our 7,608 ExpansionRx molecules appear in it by exact InChIKey, and the columns for the nine endpoints are empty across all 4.66 million rows.
+
+### **Pushing the “Easy Button”**
+
+Up until this spring, I was firmly in the LLM skeptic camp. That changed dramatically with the arrival of Claude Opus 4.8 and GPT-5.5. I went from getting nonsensical answers to my medicinal chemistry questions to being genuinely blown away by responses that made me think, "Why didn’t I consider that?" Nowadays, setting up new protocols and running benchmarks is as straightforward as writing a prompt. Instead of spending days evaluating a new model before adding it to my workflow, I simply set up a prompt, turn in for the night, and wake up to a comprehensive report. 
+
+A key insight from this work, as well as the recent [OpenADMET PXR Blind Challenge](https://openadmet.ghost.io/dont-look-back-in-error-what-we-learned-predicting-pxr-induction-part-i/), is the remarkable power of Tabular Foundation Models (TFMs). Pairing TFMs with pre-trained representations from foundation models like Monroe or CheMeleon yields truly impressive performance. For anyone looking to get up to speed on these techniques, I highly recommend watching [Karim Ben Hicham’s webinar](https://youtu.be/e1XdacPHlJg?si=KBV2jdTgPF9f-BdP), which provides a wonderfully accessible overview of TFMs and their role in molecular property prediction.
+
+As I hope I have shown, setting up and running benchmarks rigorously has now become incredibly easy. Now that it’s easy, let’s see whether everyone will do it. If they don’t, my agents and I will. Watch out\!
+
+All the code and the prompts I used for this analysis are available on GitHub.   
+[https://github.com/PatWalters/expansion-ml-comparison](https://github.com/PatWalters/expansion-ml-comparison)
