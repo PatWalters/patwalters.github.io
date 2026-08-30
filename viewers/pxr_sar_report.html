@@ -209,6 +209,14 @@ nav.toc a:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
 ul.tight{margin:0; padding-left:19px; color:var(--ink2)}
 ul.tight li{margin-bottom:7px}
 ul.tight li:last-child{margin-bottom:0}
+/* ---------- dataset intro ---------- */
+.callout a{color:var(--accent2); text-decoration:none; border-bottom:1px solid var(--line2)}
+.callout a:hover{border-bottom-color:var(--accent2)}
+.srcnote{margin-top:14px; padding-top:12px; border-top:1px solid var(--line);
+  font-size:13px; color:var(--ink2)}
+.flip{background:var(--accent-soft); border-left:3px solid var(--accent);
+  padding:12px 16px; border-radius:0 6px 6px 0; margin:0 0 12px}
+.flip p{margin:0}
 </style>
 
 
@@ -314,7 +322,44 @@ series, twelve analogues each &mdash; two of them run as full 12&times;2 matrice
 <button type="button" role="tab" id="tb-3d" aria-controls="pane-3d" data-tab="3d" aria-selected="false">3D poses</button>
 </div></div></header><div class="wrap">
 <div class="tabpane" id="pane-sar" role="tabpanel" aria-labelledby="tb-sar">
-<nav class="toc"><a href="#read">How to read the numbers</a><a href="#xtal">Crystal coverage</a><a href="#A">A &middot; cyclohexenyl benzamides</a><a href="#B">B &middot; pyrazole sulfonamides</a><a href="#C">C &middot; mandelamide piperazines</a><a href="#D">D &middot; piperazine ureas</a><a href="#E">E &middot; pyrazolyl ureas</a><a href="#F">F &middot; sulfonylacetamides</a><a href="#end">What moves potency</a></nav>
+<nav class="toc"><a href="#data">The dataset</a><a href="#read">How to read the numbers</a><a href="#xtal">Crystal coverage</a><a href="#A">A &middot; cyclohexenyl benzamides</a><a href="#B">B &middot; pyrazole sulfonamides</a><a href="#C">C &middot; mandelamide piperazines</a><a href="#D">D &middot; piperazine ureas</a><a href="#E">E &middot; pyrazolyl ureas</a><a href="#F">F &middot; sulfonylacetamides</a><a href="#end">What moves potency</a></nav>
+<section id="data"><div class="sec-head"><h2>The dataset</h2></div>
+<p class="sec-sub">Where these 96 compounds came from, and why the potency column has the shape it does.</p>
+<div class="panel callout"><div class="grid2">
+<div>
+<h3>An antitarget, screened on purpose</h3>
+<p><b>PXR</b> is a xenobiotic sensor, and in drug discovery it is an <b>antitarget</b> &mdash; a receptor you
+want your compound to leave alone. It is unusually promiscuous, and the public record is thin: on the order of
+800 trustworthy EC<sub>50</sub> values in ChEMBL, drawn from ~148 papers under conditions that were never
+standardised. Octant and OpenADMET set out to fix that by measuring a large, internally consistent
+slice of PXR chemical space in one assay.</p>
+<p>The chemistry was high-throughput: reference actives were cut back to carboxylic-acid cores and recoupled
+against a 1,536-member amine fragment set, then read out in an in-house cell-based PXR agonism reporter assay
+over nine-point dose&ndash;response. <b>This file is the 96-compound &ldquo;semi-pure&rdquo; plate from that
+campaign</b> &mdash; microscale synthesis, partial purification, straight into the assay. It resolves into six
+congeneric series, each an expansion around one previously registered lead.</p>
+<div class="flip"><p><b>Read the direction of merit backwards.</b> Everything below ranks compounds by
+potency because that is what was measured, but on an antitarget a <i>high</i> pEC<sub>50</sub> is the
+liability. Series F and B, the potent ones, are the problem; C and D are closer to where you would want to be.</p></div>
+</div>
+<div>
+<h3>Why &ldquo;corrected&rdquo; potency exists</h3>
+<p>Semi-pure material means the amount of compound in the well is not the amount you weighed out. Rather than
+build a calibration standard for every analogue, the method uses <b>charged aerosol detection</b>, whose response
+is close to structure-independent, with one universal conversion:</p>
+<div class="eq">mass (ng) = 12.5 &times; CAD peak area (pA&middot;min)</div>
+<p>That constant holds exactly across all 96 rows here. Yield follows as the ratio to theoretical mass, and the
+potency is rescaled by it &mdash; which is where the corrected pEC<sub>50</sub> comes from, and why it is a
+re-expression of the same curve rather than a second measurement.</p>
+<p>The price is a <b>floor on every error bar</b>. Individual compounds scatter around the universal slope by
+31.7%, and that term is applied identically to all 96, so no corrected value can be more precise than
+<b>&plusmn;0.138 log</b>. Median corrected SE on this plate is 0.154, of which ~80% of the variance is that one
+constant. Treat gaps under ~0.2 log as noise, however tidy the ranking looks.</p>
+<div class="srcnote">Dataset and methods: <a href="https://openadmet.github.io/octant-pxr-htchem-blogpost/"
+target="_blank" rel="noopener">Octant &amp; OpenADMET, &ldquo;High-throughput chemistry for PXR&rdquo;</a>
+(ARPA-H, Astera Foundation). Structures used here are the 184 ligand-bound PXR entries from the companion
+<span class="mono">openadmet/pxr-challenge-train-test</span> set.</div>
+</div></div></div></section>
 <section><div class="tiles"><div class="tile"><div class="k">most potent</div><div class="v">6.97</div><div class="u">OCNT-2469052 &middot; 108 nM &middot; series F</div></div><div class="tile"><div class="k">median pEC<sub>50</sub></div><div class="v">5.66</div><div class="u">across 94 curves</div></div><div class="tile"><div class="k">potency span</div><div class="v">2.95</div><div class="u">log units, ~900&times;</div></div><div class="tile"><div class="k">large corrections</div><div class="v">12</div><div class="u">recovery &lt; 20% of theory</div></div></div></section>
 <section><div class="panel strip">
 <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px"><span class="eyebrow">Corrected pEC<sub>50</sub> by series</span><span class="rsub">one dot per compound</span></div>
@@ -350,7 +395,7 @@ to a plain piperidine &mdash; a useful unsubstituted reference point.</p>
 <h3>The correction is a deterministic rescale</h3>
 <p>Corrected potency is the observed potency shifted by the fraction of theoretical material that CAD actually found on column:</p>
 <div class="eq">pEC50<sub>corr</sub> = pEC50<sub>obs</sub> &minus; log<sub>10</sub>(recovery)</div>
-<p>This reproduces every corrected value in the file to 10<sup>&minus;15</sup>. It adds no new potency information &mdash; it re-expresses the same curve against the amount of compound that was really there. The uncertainty is propagated the same way: the corrected error bar is the dose&ndash;response SE and the CAD recovery SE added in quadrature.</p>
+<p>This reproduces every corrected value in the file to 10<sup>&minus;15</sup>. It adds no new potency information &mdash; it re-expresses the same curve against the amount of compound that was really there. The uncertainty is propagated the same way. The corrected error bar is the dose&ndash;response fit SE and the CAD yield SE in quadrature, and that yield term is itself the peak-area CV and the 31.74% inter-analyte slope CV in quadrature &mdash; both reproduce to 10<sup>&minus;16</sup>. Because the slope term is a constant, it sets the &plusmn;0.138 log floor noted <a href="#data">above</a>.</p>
 </div>
 <div>
 <h3>Where to be careful</h3>
@@ -10460,7 +10505,7 @@ The 5,5-dimethyl regioisomer (6.89) and the oxazepane homologue (6.62) are both 
 <li><b>Substituent position beats substituent identity.</b> The <i>ortho</i>/<i>meta</i>/<i>para</i> walk in F spans 0.5 log on a single fluorine, and the 2-<sup>i</sup>Pr-6-Me-pyrimidin-4-yl regiochemistry is the worst aryl in both C and D.</li>
 </ul></div>
 <div><h3>Where the series differ</h3><ul class="tight">
-<li><b>Potency.</b> F (median 6.47) and B (6.06) sit roughly an order of magnitude above C (5.28) and D (5.14). If potency is the objective, F and B are the productive scaffolds; if it is an antitarget, C and D are already where you want to be.</li>
+<li><b>Potency.</b> F (median 6.47) and B (6.06) sit roughly an order of magnitude above C (5.28) and D (5.14). Since PXR is an antitarget, that ordering is a liability ranking: F and B are the ones to fix or drop, and C and D are already close to where you want to be.</li>
 <li><b>Efficacy.</b> E is the only partial-agonist series (E<sub>max</sub> 0.68 vs. 0.94&ndash;1.07 elsewhere), and it is a scaffold property, not a tail property.</li>
 <li><b>The leads are mostly still the best.</b> Each series carries exactly one older registration &mdash; its lead &mdash; and five of the six are crystallized. In four series (A, B, C, E) none of the twelve new analogues beat that lead. Only <b>F</b> (+0.64) and <b>D</b> (+0.85) improved on it, and D is the series with no structure.</li>
 <li><b>Tractability.</b> B spans only 0.9 log over twelve analogues and D&rsquo;s right-hand arm only 0.93 &mdash; both are flat, so those vectors are better spent on properties than on potency. C spans 2.5 log and is the one with real gradient left.</li>
