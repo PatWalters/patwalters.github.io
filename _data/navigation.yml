@@ -21,6 +21,13 @@ main:
   - title: "Visualization Experiments"
     url: /viewers/
 
+  # Served from its own repository, which GitHub mounts at this path under the
+  # site's hostname. It is not part of this Jekyll site, so the link has to be
+  # absolute -- a root-relative /model-validation-central/ resolves to nothing
+  # when the site is served locally.
+  - title: "Model Validation"
+    url: https://patwalters.github.io/model-validation-central/
+
   - title: "Resources"
     children:
       - title: "ML in Drug Discovery Resources"
