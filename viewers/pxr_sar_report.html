@@ -228,6 +228,14 @@ ul.tight li:last-child{margin-bottom:0}
 .ack p{margin:0 0 10px; max-width:80ch}
 .ack p:last-child{margin-bottom:0}
 .ack .disc{color:var(--muted); font-size:12.5px}
+.tabhint{
+  display:flex; gap:9px; align-items:flex-start;
+  margin:6px 0 -4px; padding:10px 14px; max-width:78ch;
+  background:var(--accent-soft); border:1px solid var(--line2); border-radius:7px;
+  font-size:13.5px; color:var(--ink2); line-height:1.55;
+}
+.tabhint b{color:var(--accent)}
+.tabhint .ar{color:var(--accent); font-size:15px; line-height:1.4}
 </style>
 
 
@@ -343,6 +351,7 @@ PXR chemical space with high-throughput chemistry and standard-free quantificati
 <span class="tag">2 without a curve</span>
 <span class="tag">5 with a bound crystal structure</span>
 </div>
+<div class="tabhint"><span class="ar">&#9660;</span><span>This report has <b>two tabs</b>. <b>SAR tables</b> holds the six R-group tables and the potency analysis. <b>3D poses</b> holds the interactive viewer, where every analogue is overlaid on its crystallized lead inside the PXR binding site. Do not miss the second one.</span></div>
 <div class="tabbar" role="tablist">
 <button type="button" role="tab" id="tb-sar" aria-controls="pane-sar" data-tab="sar" aria-selected="true">SAR tables</button>
 <button type="button" role="tab" id="tb-3d" aria-controls="pane-3d" data-tab="3d" aria-selected="false">3D poses</button>
