@@ -74,6 +74,7 @@ h1{font-size:clamp(30px,4.4vw,46px); font-weight:700; letter-spacing:-.015em; li
 h1 .dim{color:var(--accent)}
 .lede{font-size:17px; color:var(--ink2); max-width:66ch; margin:0}
 .lede + .lede{margin-top:-4px}
+.top-in .lede, .top-in .credit{max-width:78ch}
 .credit{font-size:13.5px; color:var(--muted); margin:2px 0 0; max-width:66ch}
 .credit a{color:var(--accent2); text-decoration:none; border-bottom:1px solid var(--line2)}
 .credit a:hover{border-bottom-color:var(--accent2)}
@@ -312,12 +313,16 @@ ul.tight li:last-child{margin-bottom:0}
 <header class="top"><div class="top-in">
 <span class="eyebrow">Octant &amp; OpenADMET &middot; high-throughput PXR campaign</span>
 <h1>PXR structure&ndash;activity from a <span class="dim">semi-pure screen</span></h1>
-<p class="lede">PXR is an <b>antitarget</b> &mdash; a xenobiotic sensor a drug candidate should leave alone, and one
-whose public data is thin. These 96 compounds were built by high-throughput chemistry, purified only partially, and
-assayed as made, with potency rescaled by how much material was actually in each well.</p>
-<p class="lede">This report reads the SAR out of that plate: six congeneric series, each an expansion around a
-single lead, decomposed to a shared core plus the group that varies &mdash; and, for the five leads that have been
-crystallized with PXR, every analogue overlaid on that experimental pose. Read potency as a liability, not a goal.</p>
+<p class="lede">The pregnane X receptor is the body&rsquo;s sensor for foreign chemicals, and a master regulator of
+their disposal: activate it and it transcribes the machinery that clears them &mdash; <b>CYP3A4</b> above all, along with
+other P450s, conjugating enzymes, and efflux transporters such as P-glycoprotein. A compound that turns PXR on therefore
+speeds up its own clearance, and that of anything taken alongside it, which means exposure lost before the drug reaches
+its target and a well-known route to serious drug&ndash;drug interactions.</p>
+<p class="lede">That makes PXR a textbook member of the <b>avoidome</b> &mdash; the enzymes, transporters and receptors a
+discovery programme would rather its compounds left alone. The 96 compounds here come from a high-throughput PXR campaign:
+made at microscale, purified only partially, assayed as made. This report reads the SAR out of that plate as six congeneric
+series, each an expansion around a single lead, decomposed to a shared core plus the group that varies &mdash; and, for the
+five leads crystallized with PXR, every analogue overlaid on that experimental pose. Potency here is a liability, not a goal.</p>
 <p class="credit">Source data and methods:
 <a href="https://openadmet.github.io/octant-pxr-htchem-blogpost/" target="_blank" rel="noopener">Octant &amp;
 OpenADMET, &ldquo;High-throughput chemistry for PXR&rdquo;</a></p>
