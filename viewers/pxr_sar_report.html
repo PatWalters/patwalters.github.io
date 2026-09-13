@@ -314,15 +314,15 @@ ul.tight li:last-child{margin-bottom:0}
 <span class="eyebrow">Octant &amp; OpenADMET &middot; high-throughput PXR campaign</span>
 <h1>PXR structure&ndash;activity from a <span class="dim">semi-pure screen</span></h1>
 <p class="lede">The pregnane X receptor is the body&rsquo;s sensor for foreign chemicals, and a master regulator of
-their disposal: activate it and it transcribes the machinery that clears them &mdash; <b>CYP3A4</b> above all, along with
+their disposal: activate it and it transcribes the machinery that clears them, <b>CYP3A4</b> above all, along with
 other P450s, conjugating enzymes, and efflux transporters such as P-glycoprotein. A compound that turns PXR on therefore
 speeds up its own clearance, and that of anything taken alongside it, which means exposure lost before the drug reaches
 its target and a well-known route to serious drug&ndash;drug interactions.</p>
-<p class="lede">That makes PXR a textbook member of the <b>Avoid-ome</b> &mdash; the enzymes, transporters and receptors a
+<p class="lede">That makes PXR a textbook member of the <b>Avoid-ome</b>, the enzymes, transporters and receptors a
 discovery programme would rather its compounds left alone. The 96 compounds here come from a high-throughput PXR campaign:
 made at microscale, purified only partially, assayed as made. This report reads the SAR out of that plate as six congeneric
-series, each an expansion around a single lead, decomposed to a shared core plus the group that varies &mdash; and, for the
-five leads crystallized with PXR, every analogue overlaid on that experimental pose. Potency here is a liability, not a goal.</p>
+series, each an expansion around a single lead, decomposed to a shared core plus the group that varies. For the
+five leads crystallized with PXR, every analogue is overlaid on that experimental pose. Potency here is a liability, not a goal.</p>
 <p class="credit">Source data and methods:
 <a href="https://openadmet.github.io/octant-pxr-htchem-blogpost/" target="_blank" rel="noopener">Octant &amp;
 OpenADMET, &ldquo;High-throughput chemistry for PXR&rdquo;</a></p>
@@ -343,7 +343,7 @@ OpenADMET, &ldquo;High-throughput chemistry for PXR&rdquo;</a></p>
 <div class="panel callout"><div class="grid2">
 <div>
 <h3>An antitarget, screened on purpose</h3>
-<p><b>PXR</b> is a xenobiotic sensor, and in drug discovery it is an <b>antitarget</b> &mdash; a receptor you
+<p><b>PXR</b> is a xenobiotic sensor, and in drug discovery it is an <b>antitarget</b>: a receptor you
 want your compound to leave alone. It is unusually promiscuous, and the public record is thin: on the order of
 800 trustworthy EC<sub>50</sub> values in ChEMBL, drawn from ~148 papers under conditions that were never
 standardised. Octant and OpenADMET set out to fix that by measuring a large, internally consistent
@@ -351,16 +351,16 @@ slice of PXR chemical space in one assay.</p>
 <p>The chemistry was high-throughput: reference actives were cut back to carboxylic-acid cores and recoupled
 against a 1,536-member amine fragment set, then read out in an in-house cell-based PXR agonism reporter assay
 over nine-point dose&ndash;response. <b>This file is the 96-compound &ldquo;semi-pure&rdquo; plate from that
-campaign</b> &mdash; microscale synthesis, partial purification, straight into the assay. It resolves into six
+campaign</b>: microscale synthesis, partial purification, straight into the assay. It resolves into six
 congeneric series, each an expansion around one previously registered lead.</p>
 <div class="flip"><p><b>Read the direction of merit backwards.</b> Everything below ranks compounds by
 potency because that is what was measured, but on an antitarget a <i>high</i> pEC<sub>50</sub> is the
 liability.</p>
 <p style="margin-top:10px"><b>And nothing here is clean.</b> This is an expansion around known actives, so
-every compound on the plate activates PXR &mdash; median 2.2&#8239;&micro;M, and only 13 of 94 weaker than
+every compound on the plate activates PXR, at a median of 2.2&#8239;&micro;M, with only 13 of 94 weaker than
 10&#8239;&micro;M. Series C and D are the least potent, but that means medians of 5.2 and 7.3&#8239;&micro;M,
 which is still a real induction liability rather than a safe place to be. The plate is useful for
-<i>direction</i> &mdash; which structural changes lower PXR activation &mdash; not for picking a winner.</p></div>
+<i>direction</i>, meaning which structural changes lower PXR activation, not for picking a winner.</p></div>
 </div>
 <div>
 <h3>Why &ldquo;corrected&rdquo; potency exists</h3>
@@ -369,7 +369,7 @@ build a calibration standard for every analogue, the method uses <b>charged aero
 is close to structure-independent, with one universal conversion:</p>
 <div class="eq">mass (ng) = 12.5 &times; CAD peak area (pA&middot;min)</div>
 <p>That constant holds exactly across all 96 rows here. Yield follows as the ratio to theoretical mass, and the
-potency is rescaled by it &mdash; which is where the corrected pEC<sub>50</sub> comes from, and why it is a
+potency is rescaled by it. That is where the corrected pEC<sub>50</sub> comes from, and why it is a
 re-expression of the same curve rather than a second measurement.</p>
 <p>The price is a <b>floor on every error bar</b>. Individual compounds scatter around the universal slope by
 31.7%, and that term is applied identically to all 96, so no corrected value can be more precise than
@@ -392,21 +392,21 @@ target="_blank" rel="noopener">Octant &amp; OpenADMET, &ldquo;High-throughput ch
 <div class="striprow"><div></div><svg class="stripsvg" viewBox="-4 0 628 16" preserveAspectRatio="xMidYMid meet"><text class="axl" x="0.0" y="11" text-anchor="middle">4.0</text><text class="axl" x="103.33333333333333" y="11" text-anchor="middle">4.5</text><text class="axl" x="206.66666666666666" y="11" text-anchor="middle">5.0</text><text class="axl" x="310.0" y="11" text-anchor="middle">5.5</text><text class="axl" x="413.3333333333333" y="11" text-anchor="middle">6.0</text><text class="axl" x="516.6666666666667" y="11" text-anchor="middle">6.5</text><text class="axl" x="620.0" y="11" text-anchor="middle">7.0</text></svg></div></div></section>
 <section id="xtal"><div class="sec-head"><h2>Crystal coverage</h2></div>
 <p class="sec-sub">Cross-referencing the plate against the 184 ligand-bound PXR structures in
-<span class="mono">structure_ground_truth</span>. Five plate compounds are crystallized &mdash; matched both on registration ID and,
+<span class="mono">structure_ground_truth</span>. Five plate compounds are crystallized, matched both on registration ID and,
 independently, on stereochemistry-stripped structure, which agree exactly. Each is marked
 <span class="b b-xtal">&#9670; code</span> on its row below.</p>
 <div class="panel callout"><div class="grid2">
-<div><table class="xtab"><tbody><tr><td class="sk">A</td><td>Cyclohexenyl benzamides</td><td><span class="b b-xtal">&#9670; x02813-1</span><div class="rsub" style="margin-top:3px">1.96&#8239;&#197; &middot; 2315472</div></td><td class="rsub">1 further ligand on this core</td></tr><tr><td class="sk">B</td><td>Pyrazole sulfonamides</td><td><span class="b b-xtal">&#9670; x02698-1</span><div class="rsub" style="margin-top:3px">2.24&#8239;&#197; &middot; 2318048</div></td><td class="rsub">&mdash;</td></tr><tr><td class="sk">C</td><td>Mandelamide piperazines</td><td><span class="b b-xtal">&#9670; x03363-1</span><div class="rsub" style="margin-top:3px">2.09&#8239;&#197; &middot; 2308748</div></td><td class="rsub">1 further ligand on this core</td></tr><tr><td class="sk">D</td><td>Piperazine ureas</td><td><span class="gap">no structure for any member</span></td><td class="rsub">&mdash;</td></tr><tr><td class="sk">E</td><td>Pyrazolyl ureas</td><td><span class="b b-xtal">&#9670; x02800-1</span><div class="rsub" style="margin-top:3px">1.95&#8239;&#197; &middot; 2318616</div></td><td class="rsub">4 further ligands on this core</td></tr><tr><td class="sk">F</td><td>Sulfonylacetamide morpholines</td><td><span class="b b-xtal">&#9670; x02793-1</span><div class="rsub" style="margin-top:3px">2.02&#8239;&#197; &middot; 2310554</div></td><td class="rsub">1 further ligand on this core</td></tr></tbody></table></div>
+<div><table class="xtab"><tbody><tr><td class="sk">A</td><td>Cyclohexenyl benzamides</td><td><span class="b b-xtal">&#9670; x02813-1</span><div class="rsub" style="margin-top:3px">1.96&#8239;&#197; &middot; 2315472</div></td><td class="rsub">1 further ligand on this core</td></tr><tr><td class="sk">B</td><td>Pyrazole sulfonamides</td><td><span class="b b-xtal">&#9670; x02698-1</span><div class="rsub" style="margin-top:3px">2.24&#8239;&#197; &middot; 2318048</div></td><td class="rsub">&ndash;</td></tr><tr><td class="sk">C</td><td>Mandelamide piperazines</td><td><span class="b b-xtal">&#9670; x03363-1</span><div class="rsub" style="margin-top:3px">2.09&#8239;&#197; &middot; 2308748</div></td><td class="rsub">1 further ligand on this core</td></tr><tr><td class="sk">D</td><td>Piperazine ureas</td><td><span class="gap">no structure for any member</span></td><td class="rsub">&ndash;</td></tr><tr><td class="sk">E</td><td>Pyrazolyl ureas</td><td><span class="b b-xtal">&#9670; x02800-1</span><div class="rsub" style="margin-top:3px">1.95&#8239;&#197; &middot; 2318616</div></td><td class="rsub">4 further ligands on this core</td></tr><tr><td class="sk">F</td><td>Sulfonylacetamide morpholines</td><td><span class="b b-xtal">&#9670; x02793-1</span><div class="rsub" style="margin-top:3px">2.02&#8239;&#197; &middot; 2310554</div></td><td class="rsub">1 further ligand on this core</td></tr></tbody></table></div>
 <div><h3>What the coverage is good for</h3>
 <p>Every series except <b>D</b> has a bound structure of one of its own members, at 1.95&ndash;2.24&#8239;&#197;.
-Series <b>D</b> is the gap: 24 compounds, a quarter of the plate, and nothing crystallized on that core &mdash;
+Series <b>D</b> is the gap: 24 compounds, a quarter of the plate, and nothing crystallized on that core, so
 its flat SAR has no structural explanation to lean on.</p>
 <p>Coverage is richest for <b>E</b>, and in a complementary direction: the four extra ligands hold the
-phenylsulfonamide tail fixed and vary the pyrazole N-substituent &mdash; exactly the position the plate held
+phenylsulfonamide tail fixed and vary the pyrazole N-substituent, exactly the position the plate held
 constant while varying the tail. Between the two, that series is characterized in both directions.
 The extra <b>A</b> and <b>C</b> ligands are single-atom edits of the crystallized plate compound (a pyridine for the
 benzamide ring; a methylpyrimidine for the isopropyl), and the extra <b>F</b> ligand strips the 2-aryl morpholine back
-to a plain piperidine &mdash; a useful unsubstituted reference point.</p>
+to a plain piperidine, a useful unsubstituted reference point.</p>
 </div></div></div></section>
 <section id="read"><div class="sec-head"><h2>How to read the numbers</h2></div>
 <p class="sec-sub">The potency plotted throughout is the <b>purity-corrected</b> pEC<sub>50</sub>. It is worth knowing exactly what that correction is, because it is not an independent measurement.</p>
@@ -415,19 +415,19 @@ to a plain piperidine &mdash; a useful unsubstituted reference point.</p>
 <h3>The correction is a deterministic rescale</h3>
 <p>Corrected potency is the observed potency shifted by the fraction of theoretical material that CAD actually found on column:</p>
 <div class="eq">pEC50<sub>corr</sub> = pEC50<sub>obs</sub> &minus; log<sub>10</sub>(recovery)</div>
-<p>This reproduces every corrected value in the file to 10<sup>&minus;15</sup>. It adds no new potency information &mdash; it re-expresses the same curve against the amount of compound that was really there. The uncertainty is propagated the same way. The corrected error bar is the dose&ndash;response fit SE and the CAD yield SE in quadrature, and that yield term is itself the peak-area CV and the 31.74% inter-analyte slope CV in quadrature &mdash; both reproduce to 10<sup>&minus;16</sup>. Because the slope term is a constant, it sets the &plusmn;0.138 log floor noted <a href="#data">above</a>.</p>
+<p>This reproduces every corrected value in the file to 10<sup>&minus;15</sup>. It adds no new potency information, since it re-expresses the same curve against the amount of compound that was really there. The uncertainty is propagated the same way. The corrected error bar is the dose&ndash;response fit SE and the CAD yield SE in quadrature, and that yield term is itself the peak-area CV and the 31.74% inter-analyte slope CV in quadrature. Both reproduce to 10<sup>&minus;16</sup>. Because the slope term is a constant, it sets the &plusmn;0.138 log floor noted <a href="#data">above</a>.</p>
 </div>
 <div>
 <h3>Where to be careful</h3>
 <p>The shift is only as good as the recovery estimate. Twelve compounds recovered under 20% of theory, and those same wells carry CAD peak-area CVs of 6&ndash;36% against a typical 2&ndash;3%. They are flagged <span class="b b-warn">&#9888; low recovery</span> below.</p>
 <ul class="tight">
-<li>Two compounds move more than <b>1.4 log units</b> on a ~3% recovery &mdash; <span class="mono">2469031</span> and <span class="mono">2469042</span>. Both land near the top of their series on the strength of that correction alone. Re-run them on real material before believing the rank.</li>
+<li>Two compounds move more than <b>1.4 log units</b> on a ~3% recovery: <span class="mono">2469031</span> and <span class="mono">2469042</span>. Both land near the top of their series on the strength of that correction alone. Re-run them on real material before believing the rank.</li>
 <li>Three compounds report recovery above 100%, so their correction is slightly negative.</li>
 <li><span class="mono">2469069</span> was undetected and <span class="mono">2469048</span> gave no curve; neither can be corrected.</li>
-<li>Ten structures were revised from the original registration &mdash; seven a piperazine mis-enumerated as a 3-aminopyrrolidine, three an amide formed on the aliphatic rather than the aromatic amine. Those rows are marked <span class="b b-rev">structure revised</span>.</li>
-<li><span class="b b-part">partial</span> marks a normalized E<sub>max</sub> below <b>0.80</b> &mdash; a compound that does not reach full activation.
+<li>Ten structures were revised from the original registration: seven a piperazine mis-enumerated as a 3-aminopyrrolidine, three an amide formed on the aliphatic rather than the aromatic amine. Those rows are marked <span class="b b-rev">structure revised</span>.</li>
+<li><span class="b b-part">partial</span> marks a normalized E<sub>max</sub> below <b>0.80</b>, a compound that does not reach full activation.
 Read the cut as a convention rather than a measurement: 0.80 is a round number about 20% below the plate median of 0.96, and the
-normalization is <b>not bounded at 1.0</b> &mdash; ten compounds exceed 1.3 and one reaches 2.00, so the column is not a fraction of a
+normalization is <b>not bounded at 1.0</b>: ten compounds exceed 1.3 and one reaches 2.00, so the column is not a fraction of a
 fixed ceiling. It is worth reading as a series-level signal rather than a per-compound verdict: it earns its keep in series <b>E</b>,
 where 9 of 12 carry it, and is closer to noise elsewhere.</li>
 </ul>
@@ -536,7 +536,7 @@ Q 52.4 76.0, 51.3 76.0
 L 49.3 76.0
 L 49.3 80.3
 ' fill='#191919'/>
-</svg></div><p class="corenote">R is drawn in full, so the amide linker and the <b>meta</b>/<b>para</b> sulfonyl position are visible in the depiction &mdash; four rows share the same cyclopropylsulfonamide head and differ only there.</p></div><div class="tablewrap panel"><table style="min-width:760px"><thead><tr><th class="sx2">R group (full acyl)</th><th class="">sulfonyl</th><th class="">ring / linker</th><th class="num">corrected pEC<sub>50</sub></th><th class="num">E<sub>max</sub></th><th class="">OCNT</th></tr></thead><tbody><tr tabindex="0" data-tip="OCNT-2315472  |  corrected EC50 0.373 µM  |  raw pEC50 6.24 → corrected 6.43  |  recovered 64.2% of theoretical  |  Emax 1.06"><td class="sx2"><div class="strux" style="width:168px"><svg version='1.1' baseProfile='full'
+</svg></div><p class="corenote">R is drawn in full, so the amide linker and the <b>meta</b>/<b>para</b> sulfonyl position are visible in the depiction, since four rows share the same cyclopropylsulfonamide head and differ only there.</p></div><div class="tablewrap panel"><table style="min-width:760px"><thead><tr><th class="sx2">R group (full acyl)</th><th class="">sulfonyl</th><th class="">ring / linker</th><th class="num">corrected pEC<sub>50</sub></th><th class="num">E<sub>max</sub></th><th class="">OCNT</th></tr></thead><tbody><tr tabindex="0" data-tip="OCNT-2315472  |  corrected EC50 0.373 µM  |  raw pEC50 6.24 → corrected 6.43  |  recovered 64.2% of theoretical  |  Emax 1.06"><td class="sx2"><div class="strux" style="width:168px"><svg version='1.1' baseProfile='full'
               xmlns='http://www.w3.org/2000/svg'
                       xmlns:rdkit='http://www.rdkit.org/xml'
                       xmlns:xlink='http://www.w3.org/1999/xlink'
@@ -2141,7 +2141,7 @@ L 203.3 57.3
 L 202.1 57.3
 L 202.1 48.1
 ' fill='#0000FF'/>
-</svg></div></td><td><div class="rname">NH–cyclopropyl</div></td><td class="rsub">para, –CH=CH–</td><td class="num"><div class="pot"><span class="bar s2"><i style="width:17.2%"></i></span><span class="pv">4.52</span><span class="se">±0.20</span></div></td><td class="num mono" style="font-size:13px">0.83</td><td class="mono" style="font-size:11.5px;color:var(--muted)">2469064</td></tr><tr tabindex="0" data-tip="OCNT-2469069  |  corrected EC50 —  |  raw pEC50 4.17 → corrected   |  recovered — of theoretical  |  Emax 1.26"><td class="sx2"><div class="strux" style="width:168px"><svg version='1.1' baseProfile='full'
+</svg></div></td><td><div class="rname">NH–cyclopropyl</div></td><td class="rsub">para, –CH=CH–</td><td class="num"><div class="pot"><span class="bar s2"><i style="width:17.2%"></i></span><span class="pv">4.52</span><span class="se">±0.20</span></div></td><td class="num mono" style="font-size:13px">0.83</td><td class="mono" style="font-size:11.5px;color:var(--muted)">2469064</td></tr><tr tabindex="0" data-tip="OCNT-2469069  |  corrected EC50 –  |  raw pEC50 4.17 → corrected   |  recovered – of theoretical  |  Emax 1.26"><td class="sx2"><div class="strux" style="width:168px"><svg version='1.1' baseProfile='full'
               xmlns='http://www.w3.org/2000/svg'
                       xmlns:rdkit='http://www.rdkit.org/xml'
                       xmlns:xlink='http://www.w3.org/1999/xlink'
@@ -2354,7 +2354,7 @@ Q 167.4 21.8, 168.2 22.7
 Q 168.9 23.6, 170.3 23.6
 ' fill='#FF0000'/>
 </svg></div></td><td><div class="rname">NH–C(O)NH₂</div></td><td class="rsub">para</td><td class="num"><span class="nd">no data</span></td><td class="num mono" style="font-size:13px">1.26</td><td class="mono" style="font-size:11.5px;color:var(--muted)">2469069</td></tr></tbody></table></div></div>
-<p class="sec-sub" style="margin-top:16px">Cyclopropylsulfonamide is the best simple head group (<b>2315472</b>, pEC<sub>50</sub> 6.43), and a bulky <i>N</i>-methyl-cyclohexyl sulfonamide matches it. Potency is broadly tolerant of the sulfonyl group &mdash; nine variants span only 1.0 log &mdash; but the <b>amide linker is not</b>: extending the direct aryl amide to cinnamamide costs 1.9 log and to the saturated homologue 1.6 log. The sulfone (2469067) is 1.0 log worse than the matched sulfonamide, so the S&ndash;NH donor is contributing. The series lead <b>2315472</b> is the member with a bound structure (<span class="mono">x02813-1</span>, 1.96&#8239;&#197;), and none of the eleven new analogues improved on it.</p></section>
+<p class="sec-sub" style="margin-top:16px">Cyclopropylsulfonamide is the best simple head group (<b>2315472</b>, pEC<sub>50</sub> 6.43), and a bulky <i>N</i>-methyl-cyclohexyl sulfonamide matches it. Potency is broadly tolerant of the sulfonyl group, with nine variants spanning only 1.0 log, but the <b>amide linker is not</b>: extending the direct aryl amide to cinnamamide costs 1.9 log and to the saturated homologue 1.6 log. The sulfone (2469067) is 1.0 log worse than the matched sulfonamide, so the S&ndash;NH donor is contributing. The series lead <b>2315472</b> is the member with a bound structure (<span class="mono">x02813-1</span>, 1.96&#8239;&#197;), and none of the eleven new analogues improved on it.</p></section>
 <section id="B"><div class="sec-head"><span class="serieskey">B</span><h2>Pyrazole-4-sulfonamide anilines</h2></div><p class="sec-sub">A 1-cyclobutylpyrazole-4-sulfonamide on an aniline that carries a basic amine <i>ortho</i> to the sulfonamide NH. Only that amine is varied.</p>
 <div class="plate"><div class="panel corecard"><div class="cap"><span class="eyebrow">Core &middot; R varies</span></div><div class="corebox"><svg version='1.1' baseProfile='full'
               xmlns='http://www.w3.org/2000/svg'
@@ -3604,8 +3604,8 @@ L 140.6 68.9
 L 142.0 68.9
 ' fill='#0000FF'/>
 </svg></div></td><td><div class="rname">piperidin-1-yl</div></td><td class="rsub">direct</td><td class="num"><div class="pot"><span class="bar s4"><i style="width:55.4%"></i></span><span class="pv">5.66</span><span class="se">±0.17</span></div></td><td class="num mono" style="font-size:13px">1.02</td><td class="mono" style="font-size:11.5px;color:var(--muted)">2469037</td></tr></tbody></table></div></div>
-<p class="sec-sub" style="margin-top:16px">The tightest series on the plate &mdash; all twelve fall within 0.9 log, and every one is at or above pEC<sub>50</sub> 5.7. The trend is simple <b>steric</b>: going from NMe<sub>2</sub> (5.71) up through N(Me)Et, N(Me)<sup>n</sup>Pr to N(Me)<sup>i</sup>Pr (6.52) and N(Me)cyclopentyl (6.49) gains ~0.8 log, while tying the amine back into a ring loses it again (pyrrolidine 5.78, piperidine 5.66). A branched acyclic amine is what this pocket wants. The crystallized lead <b>2318048</b> (<span class="mono">x02698-1</span>, 2.24&#8239;&#197;) carries exactly that N(Me)<sup>i</sup>Pr group and tops the series, so the bound structure is available to explain the preference directly. Note that N(Me)Ac (6.34) rests entirely on a 3% recovery correction and should be re-tested.</p></section>
-<section id="C"><div class="sec-head"><span class="serieskey">C</span><h2>Mandelamide piperazines</h2></div><p class="sec-sub">A complete 12&times;2 matrix: twelve <i>N</i>-aryl piperazines, each made twice &mdash; once with an &alpha;-H mandelamide and once with the &alpha;-methyl quaternary version. This is the cleanest single-variable comparison on the plate.</p>
+<p class="sec-sub" style="margin-top:16px">The tightest series on the plate: all twelve fall within 0.9 log, and every one is at or above pEC<sub>50</sub> 5.7. The trend is simple <b>steric</b>: going from NMe<sub>2</sub> (5.71) up through N(Me)Et, N(Me)<sup>n</sup>Pr to N(Me)<sup>i</sup>Pr (6.52) and N(Me)cyclopentyl (6.49) gains ~0.8 log, while tying the amine back into a ring loses it again (pyrrolidine 5.78, piperidine 5.66). A branched acyclic amine is what this pocket wants. The crystallized lead <b>2318048</b> (<span class="mono">x02698-1</span>, 2.24&#8239;&#197;) carries exactly that N(Me)<sup>i</sup>Pr group and tops the series, so the bound structure is available to explain the preference directly. Note that N(Me)Ac (6.34) rests entirely on a 3% recovery correction and should be re-tested.</p></section>
+<section id="C"><div class="sec-head"><span class="serieskey">C</span><h2>Mandelamide piperazines</h2></div><p class="sec-sub">A complete 12&times;2 matrix: twelve <i>N</i>-aryl piperazines, each made twice, once with an &alpha;-H mandelamide and once with the &alpha;-methyl quaternary version. This is the cleanest single-variable comparison on the plate.</p>
 <div class="plate"><div class="panel corecard"><div class="cap"><span class="eyebrow">Core &middot; Ar and R vary</span></div><div class="corebox"><svg version='1.1' baseProfile='full'
               xmlns='http://www.w3.org/2000/svg'
                       xmlns:rdkit='http://www.rdkit.org/xml'
@@ -4498,11 +4498,11 @@ L 120.4 9.2
 L 122.3 9.2
 ' fill='#0000FF'/>
 </svg></div></td><td><div class="rname">pyrimidin-2-yl</div></td><td class="num"><div class="pot" data-tip="OCNT-2469087  |  corrected EC50 89.831 µM  |  raw pEC50 3.80 → corrected 4.05  |  recovered 56.6% of theoretical  |  Emax 1.44" tabindex="0"><span class="bar s1" style="width:78px;flex:0 0 78px"><i style="width:1.6%"></i></span><span class="pv">4.05</span></div><div class="rsub" style="text-align:right;margin-top:1px">2469087</div></td><td class="num"><div class="pot" data-tip="OCNT-2469076  |  corrected EC50 9.035 µM  |  raw pEC50 4.89 → corrected 5.04  |  recovered 69.6% of theoretical  |  Emax 1.455" tabindex="0"><span class="bar s3" style="width:78px;flex:0 0 78px"><i style="width:34.8%"></i></span><span class="pv">5.04</span></div><div class="rsub" style="text-align:right;margin-top:1px">2469076</div></td><td class="num"><div class="pot"><span class="dwrap"><i class="dpos" style="left:50%;width:33.2%"></i></span><span class="pv">+1.00</span></div></td></tr></tbody></table></div></div>
-<p class="sec-sub" style="margin-top:16px">The &alpha;-methyl group is worth <b>+0.75 log on average across all twelve matched pairs</b>, and it helps in eleven of them &mdash;
+<p class="sec-sub" style="margin-top:16px">The &alpha;-methyl group is worth <b>+0.75 log on average across all twelve matched pairs</b>, and it helps in eleven of them,
 one of the most consistent single-atom effects in the dataset. It pays most where the aryl is otherwise poor (+1.44 on 2-<sup>i</sup>Pr-6-Me-pyrimidin-4-yl, +1.31 on the aminotriazine,
 +1.00 on plain pyrimidine) and least where the aryl is already good, which is the signature of two partially redundant contributions to the same binding event.
-The single exception, 2,3-dimethylphenyl (&minus;0.14), is the one aryl with an <i>ortho</i> substituent &mdash; the &alpha;-methyl and the <i>ortho</i>-methyl appear to compete for the same
-space. On the aryl side, 4-<sup>i</sup>Pr-pyrimidin-2-yl is best in both halves of the matrix (6.48 / 5.92); swapping that isopropyl for a methyl ester costs ~1.4 log. That best corner of the matrix is the crystallized lead <b>2308748</b> (<span class="mono">x03363-1</span>, 2.09&#8239;&#197;) &mdash; so the &alpha;-methyl whose effect the matrix quantifies is resolved in the bound pose.</p></section>
+The single exception, 2,3-dimethylphenyl (&minus;0.14), is the one aryl with an <i>ortho</i> substituent, and the &alpha;-methyl and the <i>ortho</i>-methyl appear to compete for the same
+space. On the aryl side, 4-<sup>i</sup>Pr-pyrimidin-2-yl is best in both halves of the matrix (6.48 / 5.92); swapping that isopropyl for a methyl ester costs ~1.4 log. That best corner of the matrix is the crystallized lead <b>2308748</b> (<span class="mono">x03363-1</span>, 2.09&#8239;&#197;), so the &alpha;-methyl whose effect the matrix quantifies is resolved in the bound pose.</p></section>
 <section id="D"><div class="sec-head"><span class="serieskey">D</span><h2>Piperazine ureas and carbamates</h2></div><p class="sec-sub">A carbonyl bridging an aryl amine or aryl ether to an <i>N</i>-aryl piperazine. The 24 compounds form two arms that cross at <span class="mono">2395416</span>: one holds the left-hand side fixed and walks the piperazine aryl, the other does the reverse.</p>
 <p class="eyebrow" style="display:block;margin:0 0 10px">Arm 1 &middot; left-hand side fixed as the 2-ethoxypyridin-3-yl urea</p>
 <div class="plate"><div class="panel corecard"><div class="cap"><span class="eyebrow">Core &middot; R varies</span></div><div class="corebox"><svg version='1.1' baseProfile='full'
@@ -4651,7 +4651,7 @@ Q 252.5 16.1, 251.4 16.1
 L 249.5 16.1
 L 249.5 20.4
 ' fill='#191919'/>
-</svg></div><p class="corenote">The left-hand side is fixed as drawn. R spans the whole diamine, so the two ring changes &mdash; a homopiperazine and a 2-methylpiperazine &mdash; are visible in the depiction.</p></div><div class="tablewrap panel"><table style="min-width:760px"><thead><tr><th class="sx2">R group (full diamine)</th><th class="">piperazine aryl</th><th class="num">corrected pEC<sub>50</sub></th><th class="num">E<sub>max</sub></th><th class="">OCNT</th></tr></thead><tbody><tr tabindex="0" data-tip="OCNT-2395416  |  corrected EC50 3.982 µM  |  raw pEC50 4.91 → corrected 5.40  |  recovered 32.4% of theoretical  |  Emax 1.105"><td class="sx2"><div class="strux" style="width:168px"><svg version='1.1' baseProfile='full'
+</svg></div><p class="corenote">The left-hand side is fixed as drawn. R spans the whole diamine, so the two ring changes, a homopiperazine and a 2-methylpiperazine, are visible in the depiction.</p></div><div class="tablewrap panel"><table style="min-width:760px"><thead><tr><th class="sx2">R group (full diamine)</th><th class="">piperazine aryl</th><th class="num">corrected pEC<sub>50</sub></th><th class="num">E<sub>max</sub></th><th class="">OCNT</th></tr></thead><tbody><tr tabindex="0" data-tip="OCNT-2395416  |  corrected EC50 3.982 µM  |  raw pEC50 4.91 → corrected 5.40  |  recovered 32.4% of theoretical  |  Emax 1.105"><td class="sx2"><div class="strux" style="width:168px"><svg version='1.1' baseProfile='full'
               xmlns='http://www.w3.org/2000/svg'
                       xmlns:rdkit='http://www.rdkit.org/xml'
                       xmlns:xlink='http://www.w3.org/1999/xlink'
@@ -5949,7 +5949,7 @@ L 146.9 46.9
 L 148.4 46.9
 ' fill='#0000FF'/>
 </svg></div></td><td><div class="rname">2-ⁱPr-6-Me-pyrimidin-4-yl</div></td><td class="num"><div class="pot"><span class="bar s2"><i style="width:15.6%"></i></span><span class="pv">4.47</span><span class="se">±0.24</span></div></td><td class="num mono" style="font-size:13px">0.93</td><td class="mono" style="font-size:11.5px;color:var(--muted)">2469104</td></tr></tbody></table></div></div>
-<p class="sec-sub">Remarkably flat &mdash; twelve different piperazine aryls span only 0.93 log, and eight of them sit within 0.4 log of each other. 4-<sup>i</sup>Pr-pyrimidin-2-yl is again the best (5.40), and the only real loser is 2-<sup>i</sup>Pr-6-Me-pyrimidin-4-yl (4.47), the same regiochemistry that underperformed in series C.</p>
+<p class="sec-sub">Remarkably flat: twelve different piperazine aryls span only 0.93 log, and eight of them sit within 0.4 log of each other. 4-<sup>i</sup>Pr-pyrimidin-2-yl is again the best (5.40), and the only real loser is 2-<sup>i</sup>Pr-6-Me-pyrimidin-4-yl (4.47), the same regiochemistry that underperformed in series C.</p>
 <div style="height:30px"></div>
 <p class="eyebrow" style="display:block;margin:0 0 10px">Arm 2 &middot; right-hand side fixed as the 4-<sup>i</sup>Pr-pyrimidinyl piperazine</p>
 <div class="plate"><div class="panel corecard"><div class="cap"><span class="eyebrow">Core &middot; R varies</span></div><div class="corebox"><svg version='1.1' baseProfile='full'
@@ -7098,8 +7098,8 @@ L 164.7 53.1
 <p class="sec-sub">The left-hand side matters more, spanning 1.4 log. Two things read clearly: a <b>tertiary</b> urea beats every secondary one
 (<i>N</i>-ethyl-<i>N</i>-phenyl at 6.25 is the best compound in the series, and the cyclic benzoxazine urea is second at 5.85, both on clean &gt;100% recoveries),
 and an <i>ortho</i> substituent on the aniline is worth roughly half a log (2-MeO-phenyl 5.40 vs. pyridin-3-yl 4.88). Carbamates are competitive with the
-secondary ureas but not with the tertiary ones. Four of the weakest rows carry large purity corrections, so the bottom of this ranking is the softest data on the plate. <b>D is also the one series with no crystal structure</b> &mdash; not for its lead 2395416, and not for any other compound on this core &mdash; so unlike every other series here, its flat SAR cannot be checked against a bound pose.</p></section>
-<section id="E"><div class="sec-head"><span class="serieskey">E</span><h2>Pyrazolyl ureas</h2></div><p class="sec-sub">A 1-(4-fluoro-2-methylphenyl)pyrazol-3-yl urea &mdash; constant across all twelve &mdash; with a sulfonamide-bearing tail. The tail is the only variable.</p>
+secondary ureas but not with the tertiary ones. Four of the weakest rows carry large purity corrections, so the bottom of this ranking is the softest data on the plate. <b>D is also the one series with no crystal structure</b>, not for its lead 2395416 and not for any other compound on this core, so unlike every other series here, its flat SAR cannot be checked against a bound pose.</p></section>
+<section id="E"><div class="sec-head"><span class="serieskey">E</span><h2>Pyrazolyl ureas</h2></div><p class="sec-sub">A 1-(4-fluoro-2-methylphenyl)pyrazol-3-yl urea, constant across all twelve, with a sulfonamide-bearing tail. The tail is the only variable.</p>
 <div class="plate"><div class="panel corecard"><div class="cap"><span class="eyebrow">Core &middot; R varies</span></div><div class="corebox"><svg version='1.1' baseProfile='full'
               xmlns='http://www.w3.org/2000/svg'
                       xmlns:rdkit='http://www.rdkit.org/xml'
@@ -9098,7 +9098,7 @@ Q 137.8 29.2, 137.8 31.0
 Q 137.8 32.9, 138.5 33.8
 Q 139.3 34.8, 140.7 34.8
 ' fill='#FF0000'/>
-</svg></div></td><td><div class="rname">4-(PhSO₂)piperazin-1-yl</div></td><td class="num"><div class="pot"><span class="bar s4"><i style="width:49.7%"></i></span><span class="pv">5.49</span><span class="se">±0.25</span></div></td><td class="num mono" style="font-size:13px">0.83</td><td class="mono" style="font-size:11.5px;color:var(--muted)">2469046</td></tr><tr tabindex="0" data-tip="OCNT-2469048  |  corrected EC50 —  |  raw pEC50 — → corrected   |  recovered 6.6% of theoretical  |  Emax —"><td class="sx"><div class="strux" style="width:150px"><svg version='1.1' baseProfile='full'
+</svg></div></td><td><div class="rname">4-(PhSO₂)piperazin-1-yl</div></td><td class="num"><div class="pot"><span class="bar s4"><i style="width:49.7%"></i></span><span class="pv">5.49</span><span class="se">±0.25</span></div></td><td class="num mono" style="font-size:13px">0.83</td><td class="mono" style="font-size:11.5px;color:var(--muted)">2469046</td></tr><tr tabindex="0" data-tip="OCNT-2469048  |  corrected EC50 –  |  raw pEC50 – → corrected   |  recovered 6.6% of theoretical  |  Emax –"><td class="sx"><div class="strux" style="width:150px"><svg version='1.1' baseProfile='full'
               xmlns='http://www.w3.org/2000/svg'
                       xmlns:rdkit='http://www.rdkit.org/xml'
                       xmlns:xlink='http://www.w3.org/1999/xlink'
@@ -9249,13 +9249,13 @@ Q 154.3 78.8, 154.3 80.6
 Q 154.3 82.5, 155.1 83.4
 Q 155.8 84.3, 157.2 84.3
 ' fill='#FF0000'/>
-</svg></div></td><td><div class="rname">NH(CH₂)₂S(=NH)(O)Ph  (sulfoximine)</div><div class="badges"><span class="b b-warn" title="large purity correction">&#9888; low recovery</span></div></td><td class="num"><span class="nd">no data</span></td><td class="num"><span class="nd">—</span></td><td class="mono" style="font-size:11.5px;color:var(--muted)">2469048</td></tr></tbody></table></div></div>
+</svg></div></td><td><div class="rname">NH(CH₂)₂S(=NH)(O)Ph  (sulfoximine)</div><div class="badges"><span class="b b-warn" title="large purity correction">&#9888; low recovery</span></div></td><td class="num"><span class="nd">no data</span></td><td class="num"><span class="nd">–</span></td><td class="mono" style="font-size:11.5px;color:var(--muted)">2469048</td></tr></tbody></table></div></div>
 <p class="sec-sub" style="margin-top:16px">This series is <b>pharmacologically distinct from the other five</b>. Its E<sub>max</sub> values cluster at 0.63&ndash;0.83
-(mean 0.68) while every other series averages 0.94&ndash;1.07 &mdash; these are partial agonists, and the effect tracks the scaffold rather than the tail,
+(mean 0.68) while every other series averages 0.94&ndash;1.07. These are partial agonists, and the effect tracks the scaffold rather than the tail,
 so it is the constant pyrazolyl urea head that caps efficacy. If the goal is a ceiling on PXR activation rather than raw potency, this is the series to work on.
 Within the tail, the two-carbon sulfonamide is the preferred geometry: a plain phenyl sulfonamide leads (6.68), <i>N</i>-benzyl and indoline are close behind,
-and both conformationally restrained versions &mdash; the azetidine (5.86) and the piperazine (5.49) &mdash; give the tail up without gaining anything.
-Replacing the sulfonamide with a carboxamide costs 0.8 log. This is the best-characterized series structurally: the lead <b>2318616</b> is crystallized (<span class="mono">x02800-1</span>, 1.95&#8239;&#197;) and four further structures keep that phenylsulfonamide tail while varying the pyrazole N-substituent &mdash; the one position the plate held fixed.</p></section>
+and both conformationally restrained versions, the azetidine (5.86) and the piperazine (5.49), give the tail up without gaining anything.
+Replacing the sulfonamide with a carboxamide costs 0.8 log. This is the best-characterized series structurally: the lead <b>2318616</b> is crystallized (<span class="mono">x02800-1</span>, 1.95&#8239;&#197;) and four further structures keep that phenylsulfonamide tail while varying the pyrazole N-substituent, the one position the plate held fixed.</p></section>
 <section id="F"><div class="sec-head"><span class="serieskey">F</span><h2>Sulfonylacetamide morpholines</h2></div><p class="sec-sub">A 3,4-dimethylphenylsulfonyl acetamide on a 2-aryl morpholine. The morpholine and its aryl vary together.</p>
 <div class="plate"><div class="panel corecard"><div class="cap"><span class="eyebrow">Core &middot; R varies</span></div><div class="corebox"><svg version='1.1' baseProfile='full'
               xmlns='http://www.w3.org/2000/svg'
@@ -9410,7 +9410,7 @@ Q 32.0 84.9, 30.8 84.9
 L 28.9 84.9
 L 28.9 89.3
 ' fill='#191919'/>
-</svg></div><p class="corenote">Most rows are 2-aryl morpholines; three change the ring itself &mdash; a 1,4-oxazepane homologue, a 5,5-dimethyl regioisomer and a spiro-indane.</p></div><div class="tablewrap panel"><table style="min-width:760px"><thead><tr><th class="sx">amine</th><th class=""></th><th class="num">corrected pEC<sub>50</sub></th><th class="num">E<sub>max</sub></th><th class="">OCNT</th></tr></thead><tbody><tr tabindex="0" data-tip="OCNT-2469052  |  corrected EC50 0.108 µM  |  raw pEC50 6.05 → corrected 6.97  |  recovered 12.1% of theoretical  |  Emax 0.7945"><td class="sx"><div class="strux" style="width:150px"><svg version='1.1' baseProfile='full'
+</svg></div><p class="corenote">Most rows are 2-aryl morpholines; three change the ring itself: a 1,4-oxazepane homologue, a 5,5-dimethyl regioisomer and a spiro-indane.</p></div><div class="tablewrap panel"><table style="min-width:760px"><thead><tr><th class="sx">amine</th><th class=""></th><th class="num">corrected pEC<sub>50</sub></th><th class="num">E<sub>max</sub></th><th class="">OCNT</th></tr></thead><tbody><tr tabindex="0" data-tip="OCNT-2469052  |  corrected EC50 0.108 µM  |  raw pEC50 6.05 → corrected 6.97  |  recovered 12.1% of theoretical  |  Emax 0.7945"><td class="sx"><div class="strux" style="width:150px"><svg version='1.1' baseProfile='full'
               xmlns='http://www.w3.org/2000/svg'
                       xmlns:rdkit='http://www.rdkit.org/xml'
                       xmlns:xlink='http://www.w3.org/1999/xlink'
@@ -10511,12 +10511,12 @@ Q 152.1 99.1, 152.9 100.0
 Q 153.6 100.9, 155.0 100.9
 ' fill='#FF0000'/>
 </svg></div></td><td><div class="rname">2-Me-2-Ph-morpholine</div></td><td class="num"><div class="pot"><span class="bar s4"><i style="width:42.9%"></i></span><span class="pv">5.29</span><span class="se">±0.16</span></div></td><td class="num mono" style="font-size:13px">1.03</td><td class="mono" style="font-size:11.5px;color:var(--muted)">2469061</td></tr></tbody></table></div></div>
-<p class="sec-sub" style="margin-top:16px">The most potent series on the plate &mdash; median pEC<sub>50</sub> 6.47, and it holds the top compound overall.
+<p class="sec-sub" style="margin-top:16px">The most potent series on the plate, at a median pEC<sub>50</sub> of 6.47, and it holds the top compound overall.
 The SAR is a clean read on the 2-aryl group: <b>para</b> substitution is strongly preferred and the effect tracks lipophilicity
 (4-CF<sub>3</sub> 6.97 &gt; 4-OCHF<sub>2</sub> 6.64 &asymp; 4-Me 6.62 &gt; 4-F 6.32), while walking that same fluorine around the ring costs potency at every step
 (<i>para</i> 6.32 &rarr; <i>meta</i> 6.26 &rarr; <i>ortho</i> 5.78). Two changes are clearly disfavoured: swapping the phenyl for 2-pyridyl loses 0.8 log,
-and methylating the morpholine 2-position to a quaternary centre loses 1.3 log &mdash; the opposite of what the same substitution did in series C.
-The 5,5-dimethyl regioisomer (6.89) and the oxazepane homologue (6.62) are both well tolerated, so the ring itself has room to move. F is the series that most clearly moved: its crystallized lead <b>2310554</b> (<span class="mono">x02793-1</span>, 2.02&#8239;&#197;) sits only 7th of twelve, beaten by six analogues and by 0.64 log at the top &mdash; and a bound pose of the parent 4-fluorophenyl exists to rationalize why.</p></section>
+and methylating the morpholine 2-position to a quaternary centre loses 1.3 log, the opposite of what the same substitution did in series C.
+The 5,5-dimethyl regioisomer (6.89) and the oxazepane homologue (6.62) are both well tolerated, so the ring itself has room to move. F is the series that most clearly moved: its crystallized lead <b>2310554</b> (<span class="mono">x02793-1</span>, 2.02&#8239;&#197;) sits only 7th of twelve, beaten by six analogues and by 0.64 log at the top, and a bound pose of the parent 4-fluorophenyl exists to rationalize why.</p></section>
 <section id="end"><div class="sec-head"><h2>What moves potency</h2></div>
 <div class="panel callout"><div class="grid2">
 <div><h3>Effects that repeat across series</h3><ul class="tight">
@@ -10525,16 +10525,16 @@ The 5,5-dimethyl regioisomer (6.89) and the oxazepane homologue (6.62) are both 
 <li><b>Substituent position beats substituent identity.</b> The <i>ortho</i>/<i>meta</i>/<i>para</i> walk in F spans 0.5 log on a single fluorine, and the 2-<sup>i</sup>Pr-6-Me-pyrimidin-4-yl regiochemistry is the worst aryl in both C and D.</li>
 </ul></div>
 <div><h3>Where the series differ</h3><ul class="tight">
-<li><b>Potency.</b> F (median 6.47) and B (6.06) sit roughly an order of magnitude above C (5.28) and D (5.14). Since PXR is an antitarget, that ordering is a liability ranking: F and B are the worst offenders. C and D are the least bad, but at 5.2 and 7.3&#8239;&micro;M median they are not clean either &mdash; no series on this plate is, and the weakest single compound measured is 95&#8239;&micro;M. Read these as SAR direction, not as a shortlist.</li>
+<li><b>Potency.</b> F (median 6.47) and B (6.06) sit roughly an order of magnitude above C (5.28) and D (5.14). Since PXR is an antitarget, that ordering is a liability ranking: F and B are the worst offenders. C and D are the least bad, but at 5.2 and 7.3&#8239;&micro;M median they are not clean either. No series on this plate is, and the weakest single compound measured is 95&#8239;&micro;M. Read these as SAR direction, not as a shortlist.</li>
 <li><b>Efficacy.</b> E is the only partial-agonist series (E<sub>max</sub> 0.68 vs. 0.94&ndash;1.07 elsewhere), and it is a scaffold property, not a tail property.</li>
-<li><b>The leads are mostly still the best.</b> Each series carries exactly one older registration &mdash; its lead &mdash; and five of the six are crystallized. In four series (A, B, C, E) none of the twelve new analogues beat that lead. Only <b>F</b> (+0.64) and <b>D</b> (+0.85) improved on it, and D is the series with no structure.</li>
-<li><b>Tractability.</b> B spans only 0.9 log over twelve analogues and D&rsquo;s right-hand arm only 0.93 &mdash; both are flat, so those vectors are better spent on properties than on potency. C spans 2.5 log and is the one with real gradient left.</li>
+<li><b>The leads are mostly still the best.</b> Each series carries exactly one older registration, its lead, and five of the six are crystallized. In four series (A, B, C, E) none of the twelve new analogues beat that lead. Only <b>F</b> (+0.64) and <b>D</b> (+0.85) improved on it, and D is the series with no structure.</li>
+<li><b>Tractability.</b> B spans only 0.9 log over twelve analogues and D&rsquo;s right-hand arm only 0.93. Both are flat, so those vectors are better spent on properties than on potency. C spans 2.5 log and is the one with real gradient left.</li>
 </ul></div></div></div>
 <div class="panel callout" style="margin-top:20px">
 <h3>Before acting on this table</h3>
 <p>Six compounds change rank materially on the purity correction alone: <span class="mono">2469031</span>, <span class="mono">2469042</span> and <span class="mono">2469118</span>
 move 1.35&ndash;1.51 log on recoveries of 3&ndash;5%, and <span class="mono">2469052</span>, <span class="mono">2469110</span> and <span class="mono">2469114</span> move 0.75&ndash;0.92 log.
-Three of those &mdash; 2469031 in B, 2469042 in E, 2469052 in F &mdash; are currently top-3 in their series. Confirming them on purified material is the highest-value follow-up
+Three of those (2469031 in B, 2469042 in E, 2469052 in F) are currently top-3 in their series. Confirming them on purified material is the highest-value follow-up
 on the plate, because three of the six SAR conclusions above lean on compounds whose potency is known only through a 20&ndash;30&times; extrapolation.</p>
 </div>
 <p class="foot" style="margin-top:26px">Built from <span class="mono">pxr_semi_pure_96_corrected.csv</span> (96 rows). Series assigned by substructure match; R-groups obtained by
@@ -10606,7 +10606,7 @@ without regard to chemistry, and on these elongated molecules it happily flips a
 core RMSD in series F from 0.8&ndash;1.8&#8239;&#197; to <b>3.3&#8239;&#197;</b>, superimposing tails onto heads. Anchoring the
 superposition and still <i>selecting</i> the conformer on shape + feature overlap keeps the stated criterion and gives
 poses a chemist would recognise.</p>
-<p>Two of the five deposited structures &mdash; series <b>C</b> and <b>E</b> &mdash; carry two copies of the ligand, and the
+<p>Two of the five deposited structures, series <b>C</b> and <b>E</b>, carry two copies of the ligand, and the
 copy nominated in <span class="mono">chains_df.csv</span> is badly modelled in both: a carbonyl oxygen 1.30&#8239;&#197; from
 Arg410 in C, a urea nitrogen 1.43&#8239;&#197; from Met323 in E. The second copy is clean in both cases, and that is the one
 used here.</p></div>
@@ -10616,16 +10616,16 @@ summarised by a dot: <i class="q q-hi"></i> under 1.2&#8239;&#197;, <i class="q 
 <i class="q q-lo"></i> over 2.0&#8239;&#197;. Series A, B, C and F place every analogue under 2&#8239;&#197;; series E places 10 of 11.</p>
 <p><b>Going to 1000 conformers rescued F but not E.</b> Both carry 6&ndash;7 rotatable bonds and both were clearly
 under-sampled at 200. Series <b>F</b> responded: mean overlap 1.03&nbsp;&rarr;&nbsp;1.21, mean core RMSD
-1.80&nbsp;&rarr;&nbsp;1.39&#8239;&#197;, and analogues under 2&#8239;&#197; went from 7 of 11 to all 11 &mdash; its four worst
-poses all improved by 0.2&ndash;0.4 overlap units. Series <b>E</b> barely moved (0.75&nbsp;&rarr;&nbsp;0.80; core RMSD
-1.56&nbsp;&rarr;&nbsp;1.55&#8239;&#197;), so its low overlap is not a sampling problem &mdash; these tails simply cannot
+1.80&nbsp;&rarr;&nbsp;1.39&#8239;&#197;, and analogues under 2&#8239;&#197; went from 7 of 11 to all 11, with its four worst
+poses all improving by 0.2&ndash;0.4 overlap units. Series <b>E</b> barely moved (0.75&nbsp;&rarr;&nbsp;0.80; core RMSD
+1.56&nbsp;&rarr;&nbsp;1.55&#8239;&#197;), so its low overlap is not a sampling problem. These tails simply cannot
 reproduce the extended crystal conformation while their ureas stay superimposed. Read E&rsquo;s poses as scaffold-anchored
 only, and its tails as unresolved.</p>
 <p>One case moved the wrong way: <span class="mono">2469049</span> gained overlap (0.76&nbsp;&rarr;&nbsp;0.85) but lost
-scaffold agreement (1.90&nbsp;&rarr;&nbsp;2.98&#8239;&#197;) &mdash; the larger ensemble contained a conformer that overlaps the
+scaffold agreement (1.90&nbsp;&rarr;&nbsp;2.98&#8239;&#197;), because the larger ensemble contained a conformer that overlaps the
 crystal ligand better while sitting worse on the shared core. That is inherent to selecting on overlap, and it is the one
 red dot in series E.</p>
-<p>Hydrogen bonds are heavy-atom N/O&hellip;N/O contacts within 3.5&#8239;&#197; &mdash; these structures carry no hydrogens, so
+<p>Hydrogen bonds are heavy-atom N/O&hellip;N/O contacts within 3.5&#8239;&#197;. These structures carry no hydrogens, so
 donor geometry is not checked. For the crystal ligands the contacts land on PXR&rsquo;s canonical polar residues
 (Ser247, Gln285, His327, His407, Arg410), which is a good sign the geometry is right. On an aligned analogue an
 H-bond is a <i>prediction</i>, not an observation.</p></div>
@@ -10747,7 +10747,7 @@ H-bond is a <i>prediction</i>, not an observation.</p></div>
       var meta = L.kind==='xtal' ? 'x-ray'
         : (L.core_rmsd.toFixed(1)+'Å · '+L.score.toFixed(2));
       var q=qcls(L); var dot = q? '<i class="q '+q+'"></i>' : '';
-      return '<label class="ligrow" data-i="'+i+'" title="'+(L.kind==='xtal'?'experimental pose':'aligned pose — core RMSD '+L.core_rmsd+'Å, shape+feature '+L.score+'')+'">'
+      return '<label class="ligrow" data-i="'+i+'" title="'+(L.kind==='xtal'?'experimental pose':'aligned pose: core RMSD '+L.core_rmsd+'Å, shape+feature '+L.score+'')+'">'
         + '<input type="checkbox" data-i="'+i+'"'+(visible[i]?' checked':'')+'>'
         + '<span class="sw" style="background:'+L.color_hex+'"></span>'
         + '<span class="ligid'+(L.kind==='xtal'?' xt':'')+'">'+L.id+(L.kind==='xtal'?' ◆':'')
